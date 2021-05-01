@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Language" content="en"/>
+    <meta name="msapplication-TileImage" content="images/fav/ms-icon-144x144.png">
+    <meta name="theme-color" content="#0D242A">
+    <meta name="msapplication-TileColor" content="#">
+    <meta name="theme-color" content="#fff">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="description" content="Scribry - Creative writing + Design thinkinking">
+    <meta name="Keywords" content="write, content development">
+
+    <!-- fav icons -->
+    <!-- <link rel="apple-touch-icon" sizes="57x57" href="%PUBLIC_URL%/images/fav/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="%PUBLIC_URL%/images/fav/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="%PUBLIC_URL%/images/fav/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="%PUBLIC_URL%/images/fav/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="%PUBLIC_URL%/images/fav/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="%PUBLIC_URL%/images/fav/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="%PUBLIC_URL%/images/fav/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="%PUBLIC_URL%/images/fav/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/images/fav/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="%PUBLIC_URL%/images/fav/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/images/fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="%PUBLIC_URL%/images/fav/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/images/fav/favicon-16x16.png">
+    <link rel="icon" href="%PUBLIC_URL%/images/fav/favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" type="image/x-icon" href="%PUBLIC_URL%/images/fav/favicon.ico"> -->
+
+    <!--  metadata used when your app is installed on a mobile device -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <title>Scribry :: Creative writing + Design thinking</title>
+
+    <!--t -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@scribry">
+    <meta name="twitter:creator" content="@scribry">
+    <meta name="twitter:title" content="Scribry Consult">
+    <meta name="twitter:description" content="Creative writing + Design thinking">
+    <meta name="twitter:image" content="">
+
+    <!--w -->
+    <meta property="og:site_name" content="Scribry">
+    <meta property="og:title" content="Scribry Consult" />
+    <meta property="og:description" content="Creative writing + Design thinking" />
+    <meta property="og:image" itemprop="image" content="">
+    <meta property="og:type" content="website" />
+
+
+     <!-- Bootstrap Tabler -->
+     <link rel="stylesheet" href="%PUBLIC_URL%/css/tabler.css">
+     <!-- Others -->
+     <link href="%PUBLIC_URL%/fonts/icons/fa/all.css" rel="stylesheet" type="text/css">
+     <link href="%PUBLIC_URL%/fonts/icons/fe/fe.css" rel="stylesheet" type="text/css">
+     <link href="%PUBLIC_URL%/fonts/icons/sc/style.css" rel="stylesheet" type="text/css">
+     <link href="%PUBLIC_URL%/fonts/webfont/montserrat/stylesheet.css" rel="stylesheet" type="text/css">
+     <link href="%PUBLIC_URL%/fonts/webfont/helvetica/stylesheet.css" rel="stylesheet" type="text/css">
+     <link href="%PUBLIC_URL%/fonts/webfont/gilroy/stylesheet.css" rel="stylesheet" type="text/css">
+     <link rel="stylesheet" href="%PUBLIC_URL%/css/style.css">
+     <link rel="stylesheet" href="%PUBLIC_URL%/css/webfix.css" type="text/css">
+     <link rel="stylesheet" href="%PUBLIC_URL%/css/custom.css" type="text/css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+     <link rel="stylesheet" href="%PUBLIC_URL%/css/responsive.css" type="text/css">
+     
+     
+     <link rel="stylesheet" href="%PUBLIC_URL%/css/dashboard.css" type="text/css">
+
+     <script src="https://apis.google.com/js/api.js" async defer></script>
+     <!-- <meta name="google-signin-client_id" content="30477950375-8arhrshbulprd48mb4098ihgbaqemv8e.apps.googleusercontent.com"> -->
+
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <script src="%PUBLIC_URL%/js/animatescroll.js"></script>
+    
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        let wdth = screen.width;
+        // $('[]').tooltip();
+
+        $('.sv--lnk').click(function(){
+            alert('this works')
+        })
+
+      })
+
+  
+      $(document).ready(function () {
+        let wdth = screen.width;
+        // $('[]').tooltip();
+
+        //nav toggle desktop
+        $('.hmb--btn').click(function (e) {
+          e.preventDefault();
+
+          let sBar = $('.ui-sidebar');
+          let sBody = $('.ui-dashboard-body');
+          let sPry = $('.ui-sidebar-primary');
+
+          if (sBar.hasClass('sdbr--cllps')) {
+            sBar.removeClass('sdbr--cllps').addClass('ssbar--open');
+            sPry.addClass('ssbar--open');
+            sBody.addClass('sdbr--open');
+          } else {
+            sBar.removeClass('ssbar--open').addClass('sdbr--cllps');
+            sPry.removeClass('ssbar--open');
+            sBody.removeClass('sdbr--open');
+          }
+          // alert('works');
+        });
+
+        //nav toggle mobile
+        $('.hmm--btn').click(function (e) {
+          e.preventDefault();
+
+          let sBar = $('.ui-sidebar');
+          let sBarM = $('.ui-monitor');
+
+          if (sBar.hasClass('pull-icons')) {
+            sBar.removeClass('pull-icons');
+          } else {
+            // console.log('this');
+            sBar.addClass('pull-icons');
+            sBarM.css({
+              display: 'block',
+            });
+          }
+        });
+
+        $('.pullin--btn').click(function (e) {
+          e.preventDefault();
+          let sBar = $('.ui-sidebar');
+          let sBarM = $('.ui-monitor');
+
+          sBar.removeClass('pull-icons');
+          sBarM.css({
+            display: 'none',
+          });
+        });
+
+        $('.ui-monitor').click(function (e) {
+          e.preventDefault();
+          let sBar = $('.ui-sidebar');
+          let sBarM = $('.ui-monitor');
+
+          sBar.removeClass('pull-icons');
+          sBarM.css({
+            display: 'none',
+          });
+        });
+
+        //topbar dropdown
+        $('.ui-dp-link').click(function (e) {
+          e.preventDefault();
+
+          let drop = $('#drop-down');
+
+          if ($(drop).hasClass('ui-hide')) {
+            $(drop).removeClass('ui-hide').addClass('ui-show');
+          } else {
+            $(drop).removeClass('ui-show').addClass('ui-hide');
+          }
+        });
+
+        $('#profile--modal').modal('show');
+      });
+
+      /*-------------------------------------------------------------------------------
+	  Navbar 
+	-------------------------------------------------------------------------------*/
+
+      var nav_offset_top = $('#sticky_height').height();
+
+      //* Navbar Fixed
+      function navbarFixed() {
+        if ($('.middle_menu_nav').length) {
+          if ($(window).width() > 768) {
+            $(window).on('scroll', function () {
+              var scroll = $(window).scrollTop();
+              if (scroll >= nav_offset_top) {
+                $('.middle_menu_nav').addClass('navbar_fixed');
+              } else {
+                $('.middle_menu_nav').removeClass('navbar_fixed');
+              }
+            });
+          }
+        }
+      }
+      navbarFixed();
+
+      $(' #page-nav-wrapper .nav li a[href^="#"]:not([href="#"]').on(
+        'click',
+        function (event) {
+          var $anchor = $(this);
+          $('html, body')
+            .stop()
+            .animate(
+              {
+                scrollTop: $($anchor.attr('href')).offset().top - 60,
+              },
+              1500
+            );
+          event.preventDefault();
+        }
+      );
+
+      /* ======= Toggle between Signup & Login & ResetPass Modals ======= */
+      $('#signup-link').on('click', function () {
+        $('#login-modal').modal('toggle');
+        $('#signup-modal').modal();
+
+        e.preventDefault();
+      });
+
+      $('#login-link').on('click', function () {
+        $('#signup-modal').modal('toggle');
+        $('#login-modal').modal();
+
+        e.preventDefault();
+      });
+
+      $('#back-to-login-link').on('click', function () {
+        $('#resetpass-modal').modal('toggle');
+        $('#login-modal').modal();
+
+        e.preventDefault();
+      });
+
+      $('#resetpass-link').on('click', function () {
+        $('#login-modal').modal('hide');
+        e.preventDefault();
+      });
+
+      /*---------------navbar js ---------------*/
+      $('.scrollto').on('click', function (event) {
+        var $anchor = $(this);
+        $('html, body')
+          .stop()
+          .animate(
+            {
+              scrollTop: $($anchor.attr('href')).offset().top - 60,
+            },
+            1500
+          );
+        event.preventDefault();
+    });
+
+     
+    
+    </script>
+
+  </body>
+</html>
