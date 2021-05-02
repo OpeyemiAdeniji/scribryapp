@@ -19,42 +19,48 @@ const PasswordChanged= () => {
 
                         <div className="row">
 
-                            <div className="col-md-5">
+                            <div className="col-md-7">
                                 
                                 <div className="row">
-                                    <div className="col-md-10 ">
-                                        <div className="logo-auth">
-                                            <div className="text-center">
-                                                <img src="../../images/assets/scribry.svg" alt='img'/>
-                                            </div>
-                                    
+                                    <div className="col-md-7 mx-auto">
+                                                <div className="logo-auth auth--mv ui-text-center">
+                                            
+                                                    <img src="../../images/assets/scribry.svg" alt='img'/>
+
+                                                </div>  
+
+                                                <div className="c--box ui-box-shadow-dark-fade mrgt2">
+                                                    <div>
+                                                    <LottiePlayer lottieData={checkData} w={200} h={200} />
+                                                    </div>
+                                                    
+                                                    <div>
+                                                    <h3 className="font-gilroymedium fs-24 text-center brand-purple mrgb mrgt1">Password changed
+                                                    successfuly!</h3>
+                                                    <p className="font-gilroy fs-15 mrgb">
+                                                    Your password has been changed successfully. Please proceed to login.
+                                                    </p>
+                                                    </div>
+
+                                                    <div className="mrgt mrgb">
+                                                                                                    
+                                                        <Link to="" className="btn big-btn btn-block bg-brand-yellow onwhite font-gilroybold">Continue</Link>
+                                                                                                
+                                                    </div>
+
+                                                </div>
+                                            
+        
                                         </div>
                                     </div>
                                 </div>
-                                <div className="c--box ui-box-shadow-dark-fade mrgt2">
-            
-                                    <LottiePlayer lottieData={checkData} w={200} h={200} />
-
-                                    <h3 className="font-gilroymedium fs-24 text-center brand-purple mrgb mrgt1">Password changed
-                                    successfuly!</h3>
-                                    <p className="font-gilroy fs-15 mrgb pdl3 pdr3">
-                                    Your password has been changed successfully. Please proceed to login.
-                                    </p>
-
-                                    <div className="mrgt mrgb">
-                                                                                    
-                                        <Link to="" className="btn big-btn hero-start btn-block bg-brand-yellow onmineshaft font-gilroybold">Continue</Link>
-                                                                                
-                                    </div>
-
-                                </div>
-                                
+                          
                             </div>
                             
                         </div>
         
                     </div>
-                </div>
+                
             </section>
 
         </Fragment>
