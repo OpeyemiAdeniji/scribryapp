@@ -49,6 +49,9 @@ a:hover{
 .brand-purpledark, .brand-purpledark a, .brand-purpledark span{
   color: #04005D !important;
 }
+.brand-black, .brand-black a, .brand-black span{
+  color: #000000 !important;
+}
 
 
 .bg-brand-yellowdark{

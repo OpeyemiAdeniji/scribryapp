@@ -185,7 +185,7 @@ const SignUp= (props) => {
                              
                               <div className="row">
 
-                                  <div className="col-md-7 mx-auto auth--mv">
+                                <div className="col-md-7 mx-auto auth--mv">
 
                                   <div className="logo-auth ui-text-center mrgb2">
                                     <img src="../../images/assets/logo-white.svg" alt='img'/>
@@ -244,14 +244,15 @@ const SignUp= (props) => {
 
                                                 <div className="input--icon"> 
                                                     
-                                                <span onClick={(e) => toggleField(e)} className="sc-eye fs-25"></span>
-                                                <input 
-                                                  
-                                                  onChange={(e) => {setRegData({...regData, password: e.target.value})}}
-                                                  type={fieldType} className=" font-gilroy fs-15 form-control" placeholder="Password" />
+                                                  <span onClick={(e) => toggleField(e)} className="sc-eye fs-25"></span>
+                                                  <input 
                                                     
+                                                    onChange={(e) => {setRegData({...regData, password: e.target.value})}}
+                                                    type={fieldType} className=" font-gilroy fs-15 form-control" placeholder="Password" />
                                                     
                                                 </div>
+                                                
+                                                
                                                 <div className="d-flex align-items-center pass-str">
                                                   {/* <PasswordStrengthBar minLength={8} password={regData.password} /> */}
                                                 </div>

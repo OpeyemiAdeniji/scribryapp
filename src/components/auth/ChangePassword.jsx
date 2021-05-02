@@ -29,6 +29,7 @@ const ResetPassword = (props) => {
 
     useEffect(() => {
     }, [])
+    
 
     const showPass = (e) => {
         e.preventDefault();
@@ -110,29 +111,25 @@ const ResetPassword = (props) => {
 
                         <div className="row">
 
-                            <div className="col-md-5">
+                            <div className="col-md-7">
                                 
-                            <div className="row">
-                            <div className="col-md-10 ">
-                            <div className="logo-auth">
-                           <div className="text-center">
-                                  <img src="../../images/assets/scribry.svg" alt='img'/>
-                            </div>
-                            
-                           </div>
-                            </div>
+                                <div className="row">
+                                    <div className="col-md-7 mx-auto auth--mv">
+                                        <div className="logo-auth auth--mv">
+                                            <div className="text-center mrgb2">
+                                                <img src="../../images/assets/scribry.svg" alt='img'/>
+                                            </div>
+                                        </div>
 
-                          </div>
-
-                                <div className="c--box ui-box-shadow-dark-fade">
+                                        <div className="c--box ui-box-shadow-dark-fade">
                                     {
                                         !reset &&
                                         <form onSubmit={(e) => submit(e)}>                                                
                                                 
                                             <div className="form-group">
-                                                <h3 className='font-gilroybold brand-purpledark fs-22 mb-1 text-center mrgt mrgb1'>Change your Passsword?
+                                                <h3 className='font-gilroybold brand-purplelight fs-22 mb-1 text-center mrgt mrgb1'>Change your Password?
                                                 </h3>
-                                                <p className='font-gilroybold brand-purpledark fs-14 mb-1 text-center  mrgb2'>
+                                                <p className='font-gilroymedium brand-black fs-14 mrgb2 text-center' style={{lineHeight: '20px'}}>
                                                 Please choose a password that you can easily remember. Think about it.
                                                 </p>
                                                 
@@ -144,21 +141,32 @@ const ResetPassword = (props) => {
                                             
 
                                                 <div className="form-group ">
-                                                <label className="fs-14">New Password</label>
+                                                <label className="fs-14 mb-1">New Password</label>
 
-                                                <div className="input-group"> 
+
+                                                <div className="input--icon"> 
+                                                    
+                                                  <span onClick={(e) => showPass(e)} to="" className={`sc ${pass === 'password' ? 'sc-eye' : 'sc-eye'} fs-25`}></span>
+                                                  <input 
+                                                  
+                                                   onChange={(e) => {setResetData({...resetData, password: e.target.value})}}
+                                                   type={pass}  name="currentpassword" className=" font-gilroymedium fs-15 form-control" placeholder="Choose a password" />
+                                                    
+                                                </div>
+                                                {/* <div className="input-group"> 
+                                                    
                                                     <input 
                                                   
                                                    onChange={(e) => {setResetData({...resetData, password: e.target.value})}}
-                                                type={pass}  name="currentpassword" className=" font-gilroybold fs-15 form-control" placeholder="Choose a password" />
+                                                   type={pass}  name="currentpassword" className=" font-gilroymedium fs-15 form-control" placeholder="Choose a password" />
                                                     
                                                     <div className="input-group--append">
                                                     <span className="i">
                                                         <Link onClick={(e) => showPass(e)} to="" className={`fe ${pass === 'password' ? 'fe-eye' : 'fe-eye-off'}`}></Link>
                                                     </span>
-                                                    </div>
+                                                    </div> 
                                                     
-                                                </div>
+                                                </div> */}
                                        
 
                                             {/* <div className="input-group-append">
@@ -174,7 +182,7 @@ const ResetPassword = (props) => {
                                                 <input 
                                                 onChange={(e) => {setResetData({...resetData, confirmPassword: e.target.value})}}
                                                 type="password"                              
-                                                className="font-gilroybold fs-15 form-control" placeholder="Confirm password" />
+                                                className="font-gilroymedium fs-15 form-control" placeholder="Confirm password" />
                                             </div>
 
                                             <div className="mrgt">
@@ -182,12 +190,17 @@ const ResetPassword = (props) => {
                                                 {
                                                     loading ?
                                                 
-                                                    (<button className="btn big-btn hero-start btn-block bg-brand-yellow onmineshaft font-gilroybold" disabled><ButtonSpinner imageUrl={'../../../images/assets/spinner-white.svg'} /></button>) :
-                                                    (<button className="btn big-btn hero-start btn-block bg-brand-yellow onmineshaft font-gilroybold">CHANGE PASSWORD</button>) 
+                                                    (<button className="btn big-btn  btn-block bg-brand-yellow onmineshaft font-gilroybold" disabled><ButtonSpinner imageUrl={'../../../images/assets/spinner-white.svg'} /></button>) :
+                                                    (<button className="btn big-btn mrgt2 btn-block bg-brand-yellow onwhite font-gilroybold">CHANGE PASSWORD</button>) 
                                                 }
                                                     
                                                 
                                             </div>       
+
+                                            <div className="form-group ui-text-center mrgt2">
+                                                <span className="font-gilroy onmineshaft fs-14">Remember your password?</span>
+                                                <Link to="/signin" className="font-gilroy fs-14 brand-yellowdark fs-14">Login</Link>
+                                            </div>
                                         </form>
                                         
                                     }
@@ -205,12 +218,16 @@ const ResetPassword = (props) => {
                                                 </div>
 
                                                 <div className="ui-text-center">
-                                                    <Link to="/signin" className="btn big-btn hero-start btn-block bg-brand-yellow onmineshaft font-gilroybold">LOGIN</Link>
+                                                    <Link to="/signin" className="btn big-btn btn-block bg-brand-yellow onmineshaft font-gilroybold">LOGIN</Link>
                                                 </div>
                                             </>
                                     }
                                 </div>
 
+                                </div>
+                            </div>
+
+                                
                             
                             </div>
                         </div>
