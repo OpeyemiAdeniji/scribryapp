@@ -14,6 +14,7 @@ import Google from '../../helpers/google';
 
 const SignIn = (props) => {
    
+
     const [loading, setLoading] = useState(false);
     const [fieldType, setField] = useState('password');
     const [user, setUser] = useState({
@@ -156,7 +157,7 @@ setLoading(false);
                           
                                         <img src="../../images/assets/logo-white.svg" alt='img'/>
                                     </div>
-                            <div className="c--box ui-box-shadow-dark-fade mrgt1">
+                               <div className="c--box ui-box-shadow-dark-fade mrgt1">
           
 
                                     <form onSubmit={login}>
@@ -233,10 +234,11 @@ setLoading(false);
                                                 </div>
                                             </>
 
+
                                     </form>
                                     
 
-                                       </div>
+                                </div>
 
 
                                     </div>

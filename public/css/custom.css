@@ -845,6 +845,8 @@ form .custom-checkbox span{
   width: 120px;
 }
 
+
+
 .full{
   height: 100vh;
 }
@@ -921,4 +923,8 @@ form .custom-checkbox span{
 }
 .phone-input [class*="col-md-"]:last-child{
   padding-right:0.75rem !important;
+}
+
+.l-hit{
+  line-height: 35px;
 }

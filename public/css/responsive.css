@@ -87,13 +87,15 @@
 }
 
 @media screen and (min-width: 992px){
-   
+
+
 }
 
 @media screen and (max-width:991px){
     .container{
         width: 98% !important;
     }
+
 }
 
 @media screen and (max-width:768px){
@@ -276,7 +278,10 @@
     }
 }
 
+
 @media (max-width: 767px){
+
+
 
     .ui-hide-mobile-only{
         display: none !important;

@@ -68,48 +68,71 @@ const ActivateAccount = (props) => {
 
     return (
         <Fragment>
-                <section className="hero home-hero ui-full-bg-norm" style={{backgroundImage: 'url("../../../images/assets/bg@changepw.png")'}}>
+             <section className="hero home-hero ui-full-bg-norm auth--bx" style={{backgroundImage: 'url("../../../images/assets/bg@changepw.png")'}}>
                 
+                <div className="container">
+                    <div className="ui-wrapper-large">
+                        <div className="row">
+                            <div className="col-md-7">
+                                <div className="row">
+                                    <div className="col-md-7 mx-auto">
+                                        <div className="logo-auth auth--mv ui-text-center">
+                            
+                                            <img src="../../images/assets/logo-white.svg" alt='img'/>
 
-                            {
-                                
-                                loading && 
-                                <div className="empty">
-                                    <img src="../../../images/assets/spinner-white.svg" alt="spinner" />
+                                        </div>
+
+                                        <div className="c--box ui-box-shadow-dark-fade mrgt1">
+
+                                           <div className="container">
+
+                                                {
+                                                    loading && 
+                                                        <div className="empty">
+                                                            <img src="../../../images/assets/spinner-white.svg" alt="spinner" />
+                                                        </div>
+                                                }
+
+                                                {
+                                                    loading &&
+                                                    <div className="">
+                                                    
+                                                        <p className="text-act">Please hold on while your account is been activated</p>
+                                                    </div>
+                                                }
+
+
+                                                {
+                                                    !loading &&
+                                                        <>
+                                                            <div className="ui-text-center mrgb2 lottie ">
+                                                                <LottiePlayer lottieData={lottieData} w='150px' h='150px' loop={true} />
+                                                            </div>
+
+                                                            <div className="mrgb1">
+                                                                <h3 className="title l-hit fs-25 ui-text-center">Account Activated successfully</h3>
+
+                                                                <p className=" fs-14 ui-text-center account">Login to your account</p>
+                                                            </div>
+
+                                                            <div className="ui-text-center mrgt4login ">
+                                                                <Link to="/signin" className="btn big-btn btn-block bg-brand-yellow onwhite mrgt2 font-gilroybold">LOGIN</Link>
+                                                            </div>
+                                                        </>
+                                                }
+
+                                           </div>
+
+                                        </div>
+
+                                    </div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-                                
-                            }
-
-                            {
-                                loading &&
-                                <div className="onwhite">
-                                
-                                <p className="text-act">Please hold on while your account is been activated</p>
-                                </div>
-
-                            }
-
-
-                            {
-                                !loading &&
-                                    <>
-                                        <div className="ui-text-center mrgb2 lottie ">
-                                            <LottiePlayer lottieData={lottieData} w='150px' h='150px' loop={true} />
-                                        </div>
-
-                                        <div className="mrgb1">
-                                            <h3 className="title fs-25 ui-text-center onwhite activate">Account Activated successfully</h3>
-                                            <p className="onmineshaft fs-14 ui-text-center mrgb1 onwhite account">Login to your account</p>
-                                        </div>
-
-                                        <div className="ui-text-center mrgt15 login ">
-                                            <Link to="/signin" className="btn big-btn hero-start btn-block bg-brand-yellow onmineshaft font-gilroybold">LOGIN</Link>
-                                        </div>
-                                    </>
-                            }
-
-                </section>
+            </section>
         </Fragment>
   );    
 };

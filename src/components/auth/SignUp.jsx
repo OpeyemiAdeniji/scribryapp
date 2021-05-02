@@ -188,10 +188,10 @@ const SignUp= (props) => {
                                   <div className="col-md-7 mx-auto auth--mv">
 
                                   <div className="logo-auth ui-text-center mrgb2">
-                              <img src="../../images/assets/logo-white.svg" alt='img'/>
-                            </div>
+                                    <img src="../../images/assets/logo-white.svg" alt='img'/>
+                                  </div>
                               
-                              <div className="c--box ui-box-shadow-dark-fade mrgt-8">
+                                  <div className="c--box ui-box-shadow-dark-fade mrgt-8">
           
 
                                     <form onSubmit={signup}>
