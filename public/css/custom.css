@@ -155,8 +155,8 @@ form textarea {
 }
 
 .big-btn {
-  padding: 0.65rem 2rem;
-  border-radius: 6px;
+  padding: 0.55rem 2rem;
+  border-radius: 4px;
   font-size: 16px;
   min-width: 240px;
 }

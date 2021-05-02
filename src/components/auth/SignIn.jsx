@@ -14,7 +14,6 @@ import Google from '../../helpers/google';
 
 const SignIn = (props) => {
    
-
     const [loading, setLoading] = useState(false);
     const [fieldType, setField] = useState('password');
     const [user, setUser] = useState({
@@ -234,11 +233,10 @@ setLoading(false);
                                                 </div>
                                             </>
 
-
                                     </form>
                                     
 
-                                </div>
+                                       </div>
 
 
                                     </div>
