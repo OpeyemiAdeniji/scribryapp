@@ -110,7 +110,7 @@ const ActivateAccount = (props) => {
                                                             </div>
 
                                                             <div className="mrgb1">
-                                                                <h3 className="title l-hit fs-25 ui-text-center">Account Activated successfully</h3>
+                                                                <h3 className="title l-hit fs-18 ui-text-center">Account Activated successfully</h3>
 
                                                                 <p className=" fs-14 ui-text-center account">Login to your account</p>
                                                             </div>

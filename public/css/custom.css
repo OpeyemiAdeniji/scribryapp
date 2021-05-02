@@ -821,12 +821,13 @@ border-color: #F9AB21;
   border: 1px solid rgba(0,0,0,0.1);
   margin-bottom: 1.5rem;
 }
-.s---box p.name {
+.s---box p.name{
   line-height: 22px;
   text-align: center;
   margin: 0.75rem 0;
   color: #0F1EA3;
 }
+
 .s---box p span {
   display: block;
 }

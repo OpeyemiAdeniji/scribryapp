@@ -10,7 +10,7 @@ import ServiceContext from './../../context/service/serviceContext'
 
 const Services = (props) => {
 
-        const serviceContext = useContext(ServiceContext)
+    const serviceContext = useContext(ServiceContext)
 
     const [showS, setShowS] = useState(false);
     const history = useHistory();
