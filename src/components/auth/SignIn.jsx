@@ -153,14 +153,16 @@ setLoading(false);
 
                                     <div className="col-md-7 mx-auto auth--mv">
 
-                                    <div className="logo-auth ui-text-center mrgb2">
-                          
-                                        <img src="../../images/assets/logo-white.svg" alt='img'/>
-                                    </div>
-                            <div className="c--box ui-box-shadow-dark-fade mrgt1">
+                                        <div className="logo-auth ui-text-center mrgb2">
+                        
+                                            <img src="../../images/assets/logo-white.svg" alt='img'/>
+
+                                        </div>
+
+                                     <div className="c--box ui-box-shadow-dark-fade mrgt1">
           
 
-                                    <form onSubmit={login}>
+                                        <form onSubmit={login}>
                                        
                                             <>
                                                 <div className="form-group">
@@ -235,23 +237,23 @@ setLoading(false);
                                             </>
 
 
-                                    </form>
+                                        </form>
                                     
-
-                                </div>
-
 
                                     </div>
 
-                                </div>
-                               
-                            </div>
-                            
-                        </div>
 
-                    </div>
+                                </div>
+
+                             </div>
+                               
+                        </div>
+                            
+                     </div>
+
                 </div>
-            </section>
+             </div>
+         </section>
     </>
   );
 };
