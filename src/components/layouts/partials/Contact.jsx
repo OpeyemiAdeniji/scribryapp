@@ -5,8 +5,11 @@ import Axios from 'axios';
 import Dropdown from './Dropdown';
 import AlertMini from './AlertMini';
 import ButtonSpinner from './ButtonSpinner';
+import ServiceContext from '../../../context/service/serviceContext'
 
 const Contact = ({ handleSubmit }) => {
+
+    const serviceContext = useContext(ServiceContext);
 
     const [step, setStep] = useState(0);
     const [loading, setLoading] = useState(false);
@@ -15,12 +18,16 @@ const Contact = ({ handleSubmit }) => {
         service: '',
         description: ''
     });
+
     const [alertData, setAlertData] = useState({
         show: false,
         type: 'info',
         message: '...'
     });
+
     useEffect(() => {
+
+        serviceContext.getServices();
 
     }, []);
 
@@ -30,48 +37,44 @@ const Contact = ({ handleSubmit }) => {
         }
     }
 
-    const getOptions = () => {
-        const op = [
-            {
-                value: 'editing',
-                label: 'Editing',
-                left: '',
-                image: '../../../images/assets/icon@editing.svg'
-            },
-            {
-                value: 'proof',
-                label: 'Proofreading',
-                left: '',
-                image: '../../../images/assets/icon@proof.svg'
-            },
-            {
-                value: 'writing',
-                label: 'Creative Writing',
-                left: '',
-                image: '../../../images/assets/icon@write.svg'
-            },
-            {
-                value: 'corp',
-                label: 'Corporate Content',
-                left: '',
-                image: '../../../images/assets/icon@corp.svg'
-            },
-            {
-                value: 'webedit',
-                label: 'Website Editing',
-                left: '',
-                image: '../../../images/assets/icon@webedit.svg'
-            },
-            {
-                value: 'webcopy',
-                label: 'Web Copy Development',
-                left: '',
-                image: '../../../images/assets/icon@webcopy.svg'
-            }
-            
-        ];
+    const getIcons = (n) => {
+        switch(n){
+            case 'Web Copy Development':
+                return '../../../images/assets/icon@webcopy.svg'
+           case 'Coorperate Writing':
+              return '../../../images/assets/icon@corp.svg'
+          case 'Document Proofreading':
+              return '../../../images/assets/icon@proof.svg'
+          case 'Editing':
+              return '../../../images/assets/icon@editing.svg'
+          case 'Website Editing':
+              return '../../../images/assets/icon@webedit.svg'
+          case 'Document Editing':
+              return '../../../images/assets/icon@editing.svg'
+          case 'Creative Writing':
+              return '../../../images/assets/icon@write.svg'
+          case 'Audio Transcription':
+              return '../../../images/assets/icon@audio.svg'
+          default:
+              return ''
+        }
+    }
 
-        return op;
+    const fillOptions = () => {
+
+        const svs = serviceContext.services.map((s) => {
+            const m = {
+                value: s._id,
+                label: s.name,
+                left: '',
+                image: getIcons(s.name)
+            }
+
+            return m;
+        });
+
+        return svs;
+
     }
 
     const getSelected = (val) => {
@@ -145,7 +148,7 @@ const Contact = ({ handleSubmit }) => {
 
             <div className="form-group">
                 <label className="font-gilroymedium brandcox-firefly fs-14 mb-1">Select service</label>
-                <Dropdown options={getOptions} selected={getSelected} theclass="md--select" image={true} placeholder={`Select option`} search={true} />
+                <Dropdown options={fillOptions} selected={getSelected} className="md--select" image={true} placeholder={`Select option`} search={true} />
             </div>
             <div className="form-group">
             <label className="font-gilroymedium brandcox-firefly fs-14 mb-1">Enter your email address</label>

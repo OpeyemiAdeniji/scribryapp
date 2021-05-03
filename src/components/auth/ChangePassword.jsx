@@ -6,7 +6,6 @@ import Alert from '../../components/layouts/partials/Alert'
 import lottieData from '../../components/_data/check-green.json'
 import LottiePlayer from '../../components/layouts/partials/LottiePlayer'
 import ButtonSpinner from '../../components/layouts/partials/ButtonSpinner'
-// import PasswordStrengthBar from 'react-password-strength-bar';
 
 const ResetPassword = (props) => {
     
@@ -29,7 +28,6 @@ const ResetPassword = (props) => {
 
     useEffect(() => {
     }, [])
-    
 
     const showPass = (e) => {
         e.preventDefault();
@@ -75,8 +73,6 @@ const ResetPassword = (props) => {
                 .then((resp) => {
                     
                     if(resp.data.error === false){
-
-                   
                         
                         setReset(true);
                     }
@@ -84,7 +80,7 @@ const ResetPassword = (props) => {
                     setAData({...aData, show: true, type: 'danger', message: `${err.response.data.message}`});
                     setTimeout(() => {
                         setAData({...aData, show: false});
-                    }, 2000)
+                    }, 8000)
 
                     setLoading(false);
 
@@ -104,7 +100,7 @@ const ResetPassword = (props) => {
 
     return (
         <Fragment>
-            <section className="hero home-hero ui-full-bg-norm" style={{backgroundImage: 'url("../../images/assets/bg@changepw.png")'}}>
+            <section className="hero home-hero ui-full-bg-norm" style={{backgroundImage: 'url("../../images/assets/bg@auth5.jpg")'}}>
                 <div className="container">
                     
                     <div className="ui-wrapper-large">
@@ -114,22 +110,24 @@ const ResetPassword = (props) => {
                             <div className="col-md-7">
                                 
                                 <div className="row">
-                                    <div className="col-md-7 mx-auto auth--mv">
-                                        <div className="logo-auth auth--mv">
-                                            <div className="text-center mrgb2">
-                                                <img src="../../images/assets/scribry.svg" alt='img'/>
-                                            </div>
-                                        </div>
 
-                                        <div className="c--box ui-box-shadow-dark-fade">
+                                    <div className="col-md-7 mx-auto auth--mv">
+
+                                    <div className="logo-auth ui-text-center">
+                                    <img src="../../images/assets/logo-white.svg" alt='img'/> 
+                                </div>
+
+                          </div>
+
+                                <div className="c--box ui-box-shadow-dark-fade">
                                     {
                                         !reset &&
                                         <form onSubmit={(e) => submit(e)}>                                                
                                                 
                                             <div className="form-group">
-                                                <h3 className='font-gilroybold brand-purplelight fs-22 mb-1 text-center mrgt mrgb1'>Change your Password?
+                                                <h3 className='font-gilroybold brand-purpledark fs-22 mb-1 text-center mrgt1 mrgb1'>Change your Passsword
                                                 </h3>
-                                                <p className='font-gilroymedium brand-black fs-14 mrgb2 text-center' style={{lineHeight: '20px'}}>
+                                                <p className='font-gilroy brand-purpledark fs-14 mb-1 text-center mrgb2' style={{lineHeight: '16px'}}>
                                                 Please choose a password that you can easily remember. Think about it.
                                                 </p>
                                                 
@@ -138,42 +136,16 @@ const ResetPassword = (props) => {
                                             <Alert show={aData.show} type={aData.type} message={aData.message} />
 
 
-                                            
+                                            <div className="form-group">
+                                                <label className="font-gilroymedium brandcox-firefly fs-14 mb-1">New Password</label>
 
-                                                <div className="form-group ">
-                                                <label className="fs-14 mb-1">New Password</label>
-
-
-                                                <div className="input--icon"> 
-                                                    
-                                                  <span onClick={(e) => showPass(e)} to="" className={`sc ${pass === 'password' ? 'sc-eye' : 'sc-eye'} fs-25`}></span>
-                                                  <input 
-                                                  
-                                                   onChange={(e) => {setResetData({...resetData, password: e.target.value})}}
-                                                   type={pass}  name="currentpassword" className=" font-gilroymedium fs-15 form-control" placeholder="Choose a password" />
-                                                    
-                                                </div>
-                                                {/* <div className="input-group"> 
-                                                    
+                                                <div className="input--icon">
+                                                    <span onClick={(e) => showPass(e)} className="sc-eye fs-25"></span>
                                                     <input 
-                                                  
-                                                   onChange={(e) => {setResetData({...resetData, password: e.target.value})}}
-                                                   type={pass}  name="currentpassword" className=" font-gilroymedium fs-15 form-control" placeholder="Choose a password" />
-                                                    
-                                                    <div className="input-group--append">
-                                                    <span className="i">
-                                                        <Link onClick={(e) => showPass(e)} to="" className={`fe ${pass === 'password' ? 'fe-eye' : 'fe-eye-off'}`}></Link>
-                                                    </span>
-                                                    </div> 
-                                                    
-                                                </div> */}
-                                       
-
-                                            {/* <div className="input-group-append">
-                                                    <span className="input-group-text">
-                                                        <Link onClick={(e) => showPass(e)} to="" className={`fe ${pass === 'password' ? 'fe-eye' : 'fe-eye-off'}`}></Link>
-                                                    </span>
-                                            </div> */}
+                                                    onChange={(e) => {setResetData({...resetData, password: e.target.value})}}
+                                                    type={pass} name="currentpassword"
+                                                    className="font-gilroy fs-15 form-control" placeholder="Choose a password" />
+                                                </div>
 
                                             </div>
 
@@ -182,29 +154,27 @@ const ResetPassword = (props) => {
                                                 <input 
                                                 onChange={(e) => {setResetData({...resetData, confirmPassword: e.target.value})}}
                                                 type="password"                              
-                                                className="font-gilroymedium fs-15 form-control" placeholder="Confirm password" />
+                                                className="font-gilroy fs-15 form-control" placeholder="Confirm password" />
                                             </div>
 
-                                            <div className="mrgt">
+                                            <div className="mrgt2">
                                             
                                                 {
                                                     loading ?
                                                 
-                                                    (<button className="btn big-btn  btn-block bg-brand-yellow onmineshaft font-gilroybold" disabled><ButtonSpinner imageUrl={'../../../images/assets/spinner-white.svg'} /></button>) :
-                                                    (<button className="btn big-btn mrgt2 btn-block bg-brand-yellow onwhite font-gilroybold">CHANGE PASSWORD</button>) 
+                                                    (<button className="btn big-btn btn-block bg-brand-yellow onwhite font-gilroybold disabled"><ButtonSpinner imageUrl="../../../images/assets/spinner-white.svg" /></button>) :
+                                                    (<button className="btn big-btn btn-block bg-brand-yellow onwhite font-gilroybold">CHANGE PASSWORD</button>) 
                                                 }
                                                     
                                                 
-                                            </div>       
-
+                                            </div>   
                                             <div className="form-group ui-text-center mrgt2">
-                                                <span className="font-gilroy onmineshaft fs-14">Remember your password?</span>
-                                                <Link to="/signin" className="font-gilroy fs-14 brand-yellowdark fs-14">Login</Link>
-                                            </div>
+                                                    <span className="font-gilroy onmineshaft fs-14">Remember your password?</span>&nbsp;
+                                                    <Link to="/signin"  className="font-gilroy fs-14 brand-yellowdark"><span className="fs-14">Login</span></Link>
+                                                </div>    
                                         </form>
                                         
                                     }
-
                                     
                                     {
                                         reset &&
@@ -213,24 +183,24 @@ const ResetPassword = (props) => {
                                                     <LottiePlayer lottieData={lottieData} w='150px' h='150px' loop={true} />
                                                 </div>
                                                 <div className="mrgb1">
-                                                    <h3 className="title fs-25 ui-text-center">Password reset successfully</h3>
+                                                    <h3 className="fs-23 brand-purple pdl2 pdr2 ui-text-center" style={{lineHeight: '25px'}}>Password reset successfully</h3>
                                                     <p className="onmineshaft fs-14 ui-text-center mrgb1">Login to your account</p>
                                                 </div>
 
-                                                <div className="ui-text-center">
-                                                    <Link to="/signin" className="btn big-btn btn-block bg-brand-yellow onmineshaft font-gilroybold">LOGIN</Link>
+                                                <div className="ui-text-center mrgb2 mrgt2">
+                                                    <Link to="/signin" className="btn big-btn  btn-block bg-brand-yellow onwhite font-gilroybold">LOGIN</Link>
                                                 </div>
                                             </>
                                     }
                                 </div>
 
-                                </div>
-                            </div>
 
-                                
+                                    </div>
+
+                                </div>
                             
                             </div>
-                        </div>
+                      
 
                     </div>
                 </div>

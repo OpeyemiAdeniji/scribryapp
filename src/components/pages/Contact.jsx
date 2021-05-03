@@ -10,7 +10,11 @@ import ButtonSpinner from '../layouts/partials/ButtonSpinner'
 
 import AlertMini from '../layouts/partials/AlertMini';
 
+import ServiceContext from '../../context/service/serviceContext'
+
 const Home = () => {
+
+    const serviceContext = useContext(ServiceContext);
 
     const [step, setStep] = useState(0);
     const [loading, setLoading] = useState(false);
@@ -32,6 +36,7 @@ const Home = () => {
     useEffect(() => {
 
         scrollTop();
+        serviceContext.getServices();
 
     }, []);
 
@@ -44,54 +49,44 @@ const Home = () => {
             ContentType: 'application/json'
         }
     }
+    const getIcons = (n) => {
+        switch(n){
+            case 'Web Copy Development':
+                return '../../../images/assets/icon@webcopy.svg'
+           case 'Coorperate Writing':
+              return '../../../images/assets/icon@corp.svg'
+          case 'Document Proofreading':
+              return '../../../images/assets/icon@proof.svg'
+          case 'Editing':
+              return '../../../images/assets/icon@editing.svg'
+          case 'Website Editing':
+              return '../../../images/assets/icon@webedit.svg'
+          case 'Document Editing':
+              return '../../../images/assets/icon@editing.svg'
+          case 'Creative Writing':
+              return '../../../images/assets/icon@write.svg'
+          case 'Audio Transcription':
+              return '../../../images/assets/icon@audio.svg'
+          default:
+              return ''
+        }
+    }
 
-    const getOptions = () => {
-        const op = [
-            {
-                value: 'editing',
-                label: 'Document Editing',
+    const fillOptions = () => {
+
+        const svs = serviceContext.services.map((s) => {
+            const m = {
+                value: s._id,
+                label: s.name,
                 left: '',
-                image: '../../../images/assets/icon@editing.svg'
-            },
-            {
-                value: 'proof',
-                label: 'Proof Reading',
-                left: '',
-                image: '../../../images/assets/icon@proof.svg'
-            },
-            {
-                value: 'writing',
-                label: 'Creative Writing',
-                left: '',
-                image: '../../../images/assets/icon@write.svg'
-            },
-            {
-                value: 'corp',
-                label: 'Corporate Writing',
-                left: '',
-                image: '../../../images/assets/icon@corp.svg'
-            },
-            {
-                value: 'webcopy',
-                label: 'Web  Editing',
-                left: '',
-                image: '../../../images/assets/icon@webcopy.svg'
-            },
-            {
-                value: 'webedit',
-                label: 'Website  Copy Development',
-                left: '',
-                image: '../../../images/assets/icon@webedit.svg'
-            },
-            {
-                value: 'transcript',
-                label: 'Transcription',
-                left: '',
-                image: '../../../images/assets/icon@webedit.svg'
+                image: getIcons(s.name)
             }
-        ];
 
-        return op;
+            return m;
+        });
+
+        return svs;
+
     }
 
     const getSelected = (val) => {
@@ -181,7 +176,7 @@ const Home = () => {
                                             <>
                                                 <div className="form-group">
                                                     <label className="font-gilroymedium brandcox-firefly fs-14 mb-1">Select service</label>
-                                                    <Dropdown options={getOptions} selected={getSelected} theclass="md--select" image={true} placeholder={`Select option`} search={true} />
+                                                    <Dropdown options={fillOptions} selected={getSelected} className="md--select" image={true} placeholder={`Select option`} search={true} />
                                                 </div>
 
                                                 <div className="form-group">

@@ -12,52 +12,51 @@ const MailSent = () => {
 
     return (
         <Fragment>
-            <section className="hero home-hero ui-full-bg-norm" style={{backgroundImage: 'url("../../images/assets/bg@forgotpw.png")'}}>
-                <div className="container">
+        <section className="hero home-hero ui-full-bg-norm" style={{backgroundImage: 'url("../../images/assets/bg@auth4.jpg")'}}>
+                    <div className="container">
                       
-                    <div className="ui-wrapper-large">
+                        <div className="ui-wrapper-large">
     
-                        <div className="row">
+                            <div className="row">
     
-                            <div className="col-md-5">
+                                <div className="col-md-7">
                                  
-                                <div className="row">
-                                    <div className="col-md-10 ">
-                                        <div className="logo-auth">
-                                            <div className="text-center">
-                                                    <img src="../../images/assets/scribry.svg" alt='img'/>
-                                            </div>
-                                        
-                                        </div>
-                                    </div>
+                                    <div className="row">
 
-                                </div>
-                                <div className="c--box ui-box-shadow-dark-fade ">
-            
+                                        <div className="col-md-7 mx-auto auth-mv">
+
+                                        <div className="logo-auth ui-text-center">
+                                    <img src="../../../images/assets/logo-white.svg" alt='img'/>
+                               </div>
+                                    <div className="c--box ui-box-shadow-dark-fade mrgt1">
+
                                     <LottiePlayer lottieData={checkData} w={200} h={200} />
 
-                                    <h3 className="font-gilroymedium fs-24 text-center brand-purple mrgb mrgt">Link sent!</h3>
-                                    <p className="font-gilroy fs-15 mrgb text-center">
+                                    <h3 className="font-gilroymedium fs-24 text-center brand-purple mrgb mrgt1">Link sent!</h3>
+                                    <p className="font-gilroy fs-15 mrgb pdl1 pdr1 text-center">
                                     A password reset link has been sent to your email. Please check your email to change your password.
                                     </p>
 
-                                    <div className="mrgt mrgb">
+                                    <div className="mrgt mrgb ui-text-center mrgt2 mrgb2">
                                                                                     
-                                                <Link to="" className="btn big-btn hero-start btn-block bg-brand-yellow onmineshaft font-gilroybold">Continue</Link>
+                                                <Link to="/signin" className="btn big-btn bg-brand-yellow onwhite font-gilroybold">Continue</Link>
                                                                                 
                                     </div>
 
                                 </div>
-                                    
-    
+                                  
+
+                                        </div>
+
+                                    </div>
                                    
-                            </div>
+                                </div>
                                 
-                        </div>
+                            </div>
     
+                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
         </Fragment>
     
         

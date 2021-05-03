@@ -5,11 +5,14 @@ import ButtonSpinner from '../../components/layouts/ButtonSpinner';
 
 
 const CreateProject = (props) => {
-  
+    
+
+   
+    
     const [serviceData, setServiceData] = useState({
         name: '',
         loading: false,
-        serviceId: props.id,
+        service: '',
         description: ''
     });
 
@@ -31,7 +34,7 @@ const CreateProject = (props) => {
 
       const config = {
         headers: {
-          Authorization: `Bearer ${localStorage.getItem('token')}`
+          ContentType: 'application/json',
           
         },
     };
@@ -46,6 +49,7 @@ const CreateProject = (props) => {
                 then((resp) => {
                     if(resp){
                         
+          
                           // clear storage
                     localStorage.clear();
                     // set new storage items

@@ -3,16 +3,13 @@
 .body,
 body,
 html {
-  background-color: #f2f7ff !important;
+  background-color: #e8edf5 !important;
 }
 .fixed {
   position: fixed !important;
   z-index: 1;
 }
-img {
-  /* width: 100%; */
-  max-width: 100%;
-}
+
 .b-btm {
   border-bottom: 2px #e5e5e5 solid !important;
   margin-top: -10px;
@@ -100,7 +97,7 @@ img {
 }
 
 .ui-sidebar {
-  background-color: #040259;
+  background-color: #051390;
 
   position: fixed;
   top: 0;
@@ -132,9 +129,9 @@ img {
 
 @media screen and (max-width: 768px) {
   .ui-sidebar {
-    -webkit-transform: translateX(-224px);
-    -moz-transform: translateX(-224px);
-    transform: translateX(-224px);
+    -webkit-transform: translateX(-255px);
+    -moz-transform: translateX(-255px);
+    transform: translateX(-255px);
   }
 
   .ui-sidebar.pull-icons {
@@ -165,11 +162,11 @@ img {
   z-index: 1;
 }
 .ui-sidebar-primary.ssbar--open {
-  width: 225px;
+  width: 255px;
 }
 @media screen and (max-width: 576px) {
   .ui-sidebar-primary.ssbar--open {
-    width: 225px;
+    width: 255px;
   }
 }
 
@@ -178,13 +175,12 @@ img {
   width: 80px;
 }
 .ui-topbar-primary-logo img {
-  margin-top: -10px;
-  width: 25px;
+  width: 40px;
 }
 .ui-sidebar-primary-header {
   width: 100%;
   display: block;
-  padding: 1.2rem 0.6rem;
+  padding: 0.6rem 0.6rem;
   position: relative;
   top: 0;
 }
@@ -256,7 +252,7 @@ img {
   display: inline-block;
   width: 100%;
   opacity: 1;
-  padding: 0.7rem 1.6rem;
+  padding: 0.5rem 3rem;
   color: #908dff;
 }
 
@@ -301,7 +297,8 @@ img {
 }
 
 .ui-sidebar-primary-links li a .fe {
-  font-size: 22px;
+  position: relative;
+  top: 3px;
 }
 
 .ui-sidebar-secondary {
@@ -337,7 +334,7 @@ img {
   transition: all 0.2s ease;
 }
 .ui-dashboard-body.sdbr--open {
-  padding-left: 225px;
+  padding-left: 255px;
 }
 
 @media (max-width: 768px) {
@@ -601,7 +598,7 @@ img {
   width: 100%;
   background-color: #fff;
   /*overflow: hidden;*/
-  padding: 0.7rem 0;
+  padding: 0.5rem 0;
   z-index: 100;
 
   /* box-shadow: 0 6px 40px 2px rgba(0, 0, 0, 0.3); */
@@ -735,6 +732,9 @@ img {
 .ui-body-content-inner {
   padding: 1rem 1.6rem;
 }
+.ui-body-content-inner.body-tabpage {
+  padding-top: 0 !important;
+}
 
 .ui-body-content .ui-content-header {
   padding: 1rem 0;
@@ -764,6 +764,9 @@ img {
   background-clip: border-box;
   /*border: 1px solid rgba(24, 24, 33, 0.4);*/
   border-radius: 0.6rem;
+}
+.ui-dashboard-card.flat{
+  background-color: transparent !important;
 }
 
 .ui-dashboard-card-header {
@@ -809,7 +812,7 @@ img {
 .ui-dashboard-card-body {
   flex: 1 1 auto;
   margin: 0;
-  padding: 1rem 2rem;
+  padding: 1rem 1.5rem;
   position: relative;
   border-radius:0 0 0.6rem 0.6rem;
 }
@@ -1899,11 +1902,6 @@ a:hover {
   padding: 0.2rem 1.5rem;
 }
 
-.modal-backdrop {
-  background-color: rgba(10, 208, 196, 0.35);
-  opacity: 0.5 !important;
-}
-
 .mdl--accts .acct--bx {
   padding: 0.1rem 1.3rem;
   border: 1px solid rgba(153, 176, 207, 0.3);
@@ -2236,11 +2234,6 @@ button:focus {
 
   .ui-body-content-inner {
     padding: 1rem 1.5rem;
-  }
-  .wd-dash-bg{
-    background: #fff;
-    height: 85px;
-  
   }
   .ui-dashboard-body .ui-topbar-inner {
     padding: 0 1.5rem;
@@ -2667,16 +2660,6 @@ a.badge-dark.focus {
   right: 0;
 }
 
-.modal-backdrop {
-  position: fixed !important;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  background-color: rgba(6, 4, 101, 0.71);
-}
-
 .modal-box {
   position: relative;
   top: 50%;
@@ -2808,10 +2791,7 @@ a.badge-dark.focus {
 .modal{
   opacity: 1 !important;
 }
-.modal-backdrop{
-  background-color: rgba(4, 3, 68, 0.85);
-  opacity: 1 !important;
-}
+
 @media (min-width: 576px){
   .modal-dialog {
       max-width: 700px;
@@ -2819,3 +2799,45 @@ a.badge-dark.focus {
   }
 }
 /* end modal */
+.rwt__tablist:not([aria-orientation="vertical"]) .rwt__tab[aria-selected="true"]:after {
+  border-bottom: none !important;
+}
+.rwt__tab {
+  height: 40px;
+  padding: 0.05rem 0.5rem !important;
+  cursor: pointer;
+  background: transparent;
+  outline: none;
+  border: none;
+  margin-right: 1rem;
+}
+.rwt__tab{
+  color: rgba(0,0,0,0.35);
+}
+.rwt__tab[aria-selected="true"] {
+  border-bottom: 2px solid #051390 !important;
+  color: #051390;
+}
+.tabpage-bx{
+  background-color: #ffffff;
+  padding: 0 1.6rem;
+}
+.project-cards .ui-dashboard-card{
+  border-radius: 5px;
+}
+.project-cards .pj--itm .icon img{
+  width: 45px;
+}
+
+.progress-bar {
+  background-color: #3466f5;
+}
+
+.card-loading {
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+

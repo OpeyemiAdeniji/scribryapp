@@ -17,7 +17,7 @@ const Contact = () => {
     })
 
     useEffect(() => {
-        scrollTop()
+        // scrollTop()
 
     }, []);
 
@@ -25,37 +25,37 @@ const Contact = () => {
         {
             type: 'de',
             title: 'Document Editing',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+            description: 'Error-free, flawless and fast editing and proofreading services for authors, writers, academics, business, organizations.'
         },
         {
             type: 'pr',
             title: 'Proofreading',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+            description: 'Error-free, flawless and fast editing and proofreading services for authors, writers, academics, business, organizations.'
         },
         {
             type: 'cw',
             title: 'Creative Writing',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+            description: 'For blog owners, authors, leaders, media companies, etc. We create amazing contents such as blog posts, stories, articles, movie scripts that can convey your thoughts in a unique way. '
         },
         {
             type: 'crw',
             title: 'Corporate Writing',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+            description: 'We produce professionally crafted contents such as corporate profiles, business plans, proposals, reports, manuals, etc.For businesses, SMEs, entrepreneurs, executives, organizations, ministries, governments, etc.'
         },
         {
             type: 'we',
             title: 'Website Editing',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+            description: 'An Error-full website repels great customers, an Error-free one attract great customers We can help give your website a professional and error-free outlook through our detailed editing and proofreading service'
         },
         {
             type: 'wcd',
-            title: 'Web Copy Editing',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+            title: 'Web Content Development',
+            description: 'Professional and error-free web content development services for blog owners, web designers/developers, businesses, organizations, etc.'
         },
         {
             type: 'tr',
             title: 'Transcription',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+            description: 'We provide accurate and excellent transcription services for individuals, speakers, pastors, leaders, NGOs, organizations, businesses, etc.'
         },
     ];
 
@@ -106,18 +106,19 @@ const Contact = () => {
                                 </Link>
                                 
                                 <h1 className="font-montserratbold title title-large">
-                                    <span className="brand-purpledark">We combine </span>  
-                                    <span className="brand-purpledark">creative writing and</span> 
-                                    <span className="brand-yellow"> design</span> 
-                                    <span className="brand-purpledark"> thinking</span>
+                                    <span className="brand-purpledark">Exceptional editing,</span>  
+                                    <span className="brand-purpledark">writing and </span> 
+                                    <span className="brand-yellow">content development</span> 
+                                    <span className="brand-purpledark"> solutions</span>
                                 </h1>
 
-                                <div className="font-gilroymedium body-text fs-17 hero-text brand-blackblue">
-                                Through our exquisite proofreading, editing, writing and content development services, we enable individuals, writers, authors, students, content developers, businesses and organizations communicate their ideas, contents, solutions and offering, clearly and effectively, to their audiences and markets.
+                                <div className="font-gilroymedium body-text fs-17 hero-text onmineshaft">
+                               Author, writer, academic, business or organization?
+                               Let's help you communicate to your market and audience in a great way!
                                 </div>
 
                                 <div className="ui-group-button mrgt3">
-                                    <Link to="/contact" className="btn big-btn hero-start bg-brand-purple onwhite font-gilroybold">Get Started</Link>
+                                    <Link to="/signup" className="btn big-btn hero-start bg-brand-purple onwhite font-gilroybold">Get Started</Link>
                                     <Link onClick={toggleModal} to="" className="brand-purpledark font-gilroybold video-link">
                                         <span>Contact Us</span> &nbsp;
                                         <span className="fe fe-arrow-right" style={{position: 'relative', top: '2px'}}></span> 
@@ -160,13 +161,14 @@ const Contact = () => {
 
                                 </div>
 
-                                <p className="font-gilroymedium hero-text brand-blackblue">
-                                We help authors, writers, content creators and organization realize their dreams. Through our exquisite writing, proofreading and editing, and content development products and services, we enable individuals, businesses and organizations communicate their ideas, thought, solutions and offering to their audience and markets.
+                                <p className="font-gilroymedium hero-text onmineshaft">
+                                Through our exquisite proofreading, editing, writing and content development services, we enable authors, writers, influencers, leaders, academics, businesses and organizations
+                                communicate their ideas, thoughts, solutions and offering to their markets and audiences in a great and impactful way.
                                 </p>
 
                                 <div className="ui-group-button mrgt3">
-                                    <Link to="/contact" className="btn big-btn hero-start bg-brand-purple onwhite font-helveticabold">Get Started</Link>
-                                    <Link  to="" className="brand-purpledark font-gilroybold video-link">
+                                    <Link to="/signup" className="btn big-btn hero-start bg-brand-purple onwhite font-helveticabold">Get Started</Link>
+                                    <Link onClick={toggleModal}  to="" className="brand-purpledark font-gilroybold video-link">
                                         <span>Contact Us</span> &nbsp;
                                         <span className="fe fe-arrow-right" style={{position: 'relative', top: '2px'}}></span> 
                                     </Link>
@@ -224,10 +226,10 @@ const Contact = () => {
                                                     <span className="fe fe-external-link brand-purple"></span>
                                                     <img src="../../../images/assets/icon@editing.svg" alt="icon" />
                                                     <p className="name">
-                                                        {/* <span className="font-montserratmedium fs-17">Document</span> */}
+                                                        <span className="font-montserratmedium fs-17">Document</span>
                                                         
                                                         <span className="font-montserratmedium fs-17">Editing</span>
-                                                        <br/>
+                                                      
                                                     </p>
 
                                                     <p className="dur mrgb0">
@@ -260,8 +262,8 @@ const Contact = () => {
                                                 <span className="fe fe-external-link brand-purple"></span>
                                                 <img src="../../../images/assets/icon@write.svg" alt="icon" />
                                                 <p className="name">
-                                                    <span className="font-montserratmedium fs-17">Creative</span>
-                                                    <span className="font-montserratmedium fs-17">Writing</span>
+                                                    <span className="font-montserratmedium fs-17">Website</span>
+                                                    <span className="font-montserratmedium fs-17">Editing</span>
                                                 </p>
 
                                                 <p className="dur mrgb0">
@@ -294,8 +296,8 @@ const Contact = () => {
                                                 <span className="fe fe-external-link brand-purple"></span>
                                                 <img src="../../../images/assets/icon@webedit.svg" alt="icon" />
                                                 <p className="name">
-                                                    <span className="font-montserratmedium fs-17">Website</span>
-                                                    <span className="font-montserratmedium fs-17">Editing</span>
+                                                    <span className="font-montserratmedium fs-17">Web Content</span>
+                                                    <span className="font-montserratmedium fs-17">Development</span>
                                                 </p>
 
                                                 <p className="dur mrgb0">
@@ -304,7 +306,6 @@ const Contact = () => {
                                             </div>
                                             </Link>
                                         </div>
-
 
                                         <div className="col-md-4 col-sm-6">
                                             <Link onClick={(e) => getContent(e, 'wcd')} className="s--link">
@@ -316,8 +317,8 @@ const Contact = () => {
                                                     <span className="font-montserratmedium fs-17">Development</span>
                                                 </p> */}
                                             <p className="name">
-                                                <span className="font-montserratmedium fs-17">Website</span>
-                                                <span className="font-montserratmedium fs-17">Editing</span>
+                                                <span className="font-montserratmedium fs-17">Audio / Video</span>
+                                                <span className="font-montserratmedium fs-17">Transcription</span>
                                             </p>
 
                                                 <p className="dur mrgb0">
@@ -327,11 +328,11 @@ const Contact = () => {
                                             </Link>
                                         </div>
 
-                                        <div className="col-md-4 col-sm-6 ui-hide">
+                                        <div className="col-md-4 col-sm-6">
                                             <Link onClick={(e) => getContent(e, 'tr')} className="s--link">
                                                 <div className="s--box">
                                                     <span className="fe fe-external-link brand-purple"></span>
-                                                    <img src="../../../images/assets/icon@webcopy.svg" alt="icon" />
+                                                    <img src="../../../images/assets/icon@audio.svg" alt="icon" />
                                                     <p className="name">
                                                         <span className="font-montserratmedium fs-17">Transcription</span>
                                                         <br />
@@ -368,12 +369,17 @@ const Contact = () => {
                                     </h1>
                                 </div>
 
-                                <p className="font-gilroymedium fs-18 hero-text brand-blackblue ui-hide-mobile-only">
-                                Through our exquisite proofreading, editing, writing and content development services, we enable individuals, writers, authors, students, content developers, businesses and organizations communicate their ideas, contents, solutions and offering, clearly and effectively, to their audiences and markets.
+                                <p className="font-gilroymedium fs-18 hero-text onmineshaft ui-hide-mobile-only">
+                               We are here for just one thing: to help you inscribe your dream to the world. Whether you are an author, writer, professional, business owner, organizationm, church, minister, mom or dad.
+                                </p>
+                                <p className="font-gilroy fs-16 hero-text onmineshaft ui-hide-mobile-only">
+                                Do you have a written script, a book, a manuscript, a document to edit and proof? Do you have an idea you wan to write?
+                                Or you have recorded messages or written manuals to transcribe? Dream the dream; we will help you inscribe it...
                                 </p>
 
+
                                 <div className="ui-group-button group-x mrgt3">
-                                    <Link to="/contact" className="btn big-btn hero-start bg-brand-purple onwhite font-helveticabold">Get Started</Link>
+                                    <Link to="/signup" className="btn big-btn hero-start bg-brand-purple onwhite font-helveticabold">Get Started</Link>
                                     <Link onClick={toggleModal} to="" className="brand-purpledark font-gilroybold video-link">
                                         <span>Contact Us</span> &nbsp;
                                         <span className="fe fe-arrow-right" style={{position: 'relative', top: '2px'}}></span> 
@@ -388,7 +394,153 @@ const Contact = () => {
                     </div>
                 </div>
             </section>
+            
+            <section className="section right lenders ui-full-bg-norm" style={{backgroundImage: 'url("../../images/assets/bg@back-five.jpg")'}}>
+                <div className="container">
+                    <div className="ui-wrapper-large">
+
+                        <div className="row mrgb2">
+
+                            <div className="col-md-5 mx-auto text-center">
+
+                                 <h1 className="font-montserratbold">
+                                    <span className="brand-purple fs-28">Why Our Customers</span>  
+                                    <span className="brand-yellow fs-28"> Love</span> 
+                                    <span className="brand-purple fs-28"> Us</span> 
+                                </h1>
+
+                               
+
+                                {/* <div className="ui-group-button mrgt3">
+                                    <Link to="/signup" className="btn big-btn hero-start bg-brand-purple onwhite font-helveticabold">Get Started</Link>
+                                    <Link onClick={toggleModal}  to="" className="brand-purpledark font-gilroybold video-link">
+                                        <span>Contact Us</span> &nbsp;
+                                        <span className="fe fe-arrow-right" style={{position: 'relative', top: '2px'}}></span> 
+                                    </Link>
+                                </div> */}
+
+                                
+                            </div>
+
+                            
+
+                        </div>
+
+                        <div className="row" style={{justifyContent: 'center'}}>
+
+                            <div className="col-md-3">
+
+                                <div className="why--bx">
+                                    <img src='../../../images/assets/icon@ex.svg' alt="icon" />
+                                    <p className="mrgt1">
+                                        <span className="font-montserratmedium brand-purple fs-16">Excellent Service</span>  
+                                    </p>
+                                    <p className="mrgb0">
+                                        <span className="font-gilroy onmineshaft fs-14">Our growing team of carefully selected expert proofreaders, editors, writers and transcribers 
+                                        combine their rich expertise and experiences with the
+                                            support of latest technologies and failure-proof processes to offer you outstanding services.</span>
+                                    </p>
+                                </div>
+
+                            </div>
+
+                            <div className="col-md-3">
+
+                                <div className="why--bx">
+                                    <img src='../../../images/assets/icon@ca.svg' alt="icon" />
+                                    <p className="mrgt1">
+                                        <span className="font-montserratmedium brand-purple fs-16">Customized Attention</span>  
+                                    </p>
+                                    <p className="mrgb0">
+                                        <span className="font-gilroy onmineshaft fs-14">Our growing team of carefully selected expert proofreaders, editors, writers and transcribers 
+                                                combine their rich expertise and experiences with the
+                                                    support of latest technologies and failure-proof processes to offer you outstanding services.</span>
+                                    </p>
+                                </div>
+
+                            </div>
+
+                            <div className="col-md-3">
+
+                                <div className="why--bx">
+                                    <img src='../../../images/assets/icon@fd.svg' alt="icon" />
+                                    <p className="mrgt1">
+                                        <span className="font-montserratmedium brand-purple fs-16">Fast Delivery</span>  
+                                    </p>
+                                    <p className="mrgb0">
+                                    <span className="font-gilroy onmineshaft fs-14">Our agile and efficient processes enable us to return your edited, proofread and formatted work as quick as possible depending on the quantity of content.
+                                                        </span>
+                                    </p>
+                                </div>
+
+                            </div>
+
+                            <div className="col-md-3">
+
+                                <div className="why--bx">
+                                    <img src='../../../images/assets/icon@ap.svg' alt="icon" />
+                                    <p className="mrgt1">
+                                        <span className="font-montserratmedium brand-purple fs-16">Affordable Price</span>  
+                                    </p>
+                                    <p className="mrgb0">
+                                    <span className="font-gilroy onmineshaft fs-14">We designed our services to be affordable to a wide ranges of people, businesses and organizations
+                                                        </span>
+                                    </p>
+                                </div>
+
+                            </div>
+
+                            <div className="col-md-3">
+
+                                <div className="why--bx">
+                                    <img src='../../../images/assets/icon@ts.svg' alt="icon" />
+                                    <p className="mrgt1">
+                                        <span className="font-montserratmedium brand-purple fs-16">Total Solutions</span>  
+                                    </p>
+                                    <p className="mrgb0">
+                                    <span className="font-gilroy onmineshaft fs-14">Our goal is to be Africa's one-stop shop for writing and content development. Therefore, we cover all aspects of your writing and content development needs.
+                                                        </span>
+                                    </p>
+                                </div>
+
+                            </div>
+
+                            <div className="col-md-3">
+
+                                <div className="why--bx">
+                                    <img src='../../../images/assets/icon@cp.svg' alt="icon" />
+                                    <p className="mrgt1">
+                                        <span className="font-montserratmedium brand-purple fs-16">Content Protection</span>  
+                                    </p>
+                                    <p className="mrgb0">
+                                    <span className="font-gilroy onmineshaft fs-14">We understand that the security of your document is vital. We, therefore, employ the highest standard in ensuring your content is secure and safe during and after service.</span>
+                                    </p>
+                                </div>
+
+                            </div>
+
+                            <div className="col-md-3">
+
+                                <div className="why--bx">
+                                    <img src='../../../images/assets/icon@ci.svg' alt="icon" />
+                                    <p className="mrgt1">
+                                        <span className="font-montserratmedium brand-purple fs-16">Creative Identity Retention</span>  
+                                    </p>
+                                    <p className="mrgb0">
+                                    <span className="font-gilroy onmineshaft fs-14">We retain your work’s unique creative identity, while we make its quality superb and suitable to your audience.</span>
+                                    </p>
+                                </div>
+
+                            </div>
+
+                        </div>
+                                
+                        
+                    </div>
+                </div>
+            </section>
         
+            
             <section id="faqs" className="section right decision ui-full-bg-norm" style={{backgroundImage: 'url("../../images/assets/bg@decision.jpg")'}}>
                 <div className="container">
                     <div className="ui-wrapper-large">
@@ -454,7 +606,7 @@ const Contact = () => {
                                 </p>
 
                                 <div className="ui-group-button mrgt3">
-                                    <Link to="/contact" className="btn big-btn hero-start bg-brand-yellow onwhite font-gilroybold">Get Started</Link>
+                                    <Link to="/signup" className="btn big-btn hero-start bg-brand-yellow onwhite font-gilroybold">Get Started</Link>
                                 </div>
 
                                 

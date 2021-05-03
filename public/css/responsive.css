@@ -87,15 +87,13 @@
 }
 
 @media screen and (min-width: 992px){
-
-
+   
 }
 
 @media screen and (max-width:991px){
     .container{
         width: 98% !important;
     }
-
 }
 
 @media screen and (max-width:768px){
@@ -105,17 +103,20 @@
     .hero.home-hero {
         height: 85vh;
     }
-    /* auth */
-    .c--box {
-        width: 100%;
-        background-color: #fff;
-        padding: 1.5rem 1.5rem;
-        border-radius: 7px;
-        justify-content: center;
+    .auth--bx{
+        height: 100vh;
+        display: flex;
         align-items: center;
     }
     .main-nav {
         padding: 1rem 0;
+    }
+
+    .serv--bx .s--link {
+        width: 90% !important;
+    }
+    .serv--bx .s--box {
+        margin-right: 0 !important;
     }
 
     .navbar-toggler.collapsed ~ .navbar-collapse {
@@ -213,12 +214,6 @@
         bottom: -6rem;
         z-index: 2;
     }
-    .ui-wrapper-large{
-        padding: 3em 0 !important;
-    }
-    .hero .ui-wrapper-large {
-        padding: 5em 0 !important;
-    }
     .hero .box-label{
         margin-top: 6rem !important;
     }
@@ -273,15 +268,10 @@
 }
 
 @media screen and (max-width:720px){
-    .hero.home-hero {
-        height: 100vh;
-    }
+    
 }
 
-
 @media (max-width: 767px){
-
-
 
     .ui-hide-mobile-only{
         display: none !important;
@@ -356,32 +346,27 @@
     .main-nav .navbar-collapse ul{
         padding: 0 !important;
     }
-    /* .main-nav .navbar-collapse {
-        height: 100%;
-        position: fixed;
-        width: 70%;
-        left: -290px;
-        top: 0rem;
-        background: #050155;
-        max-height: 100%;
-        z-index: 2000;
-        overflow-y: scroll;
-        padding: 2rem 1.5rem;
-
-        -webkit-transition: all 0.15s ease 0s;
-        -moz-transition: all 0.15s ease 0s;
-        transition: all 0.15s ease 0s;
+    
+    .c--drop .menu {
+        width: 320px;
+        left: -170px;
     }
-    .navbar-collapse.collapsing {
-        left: 0px;
-    }
-  
-    .navbar-collapse.show {
-        left: 0;
-    } */
 
     .section.start .ui-wrapper-xlarge{
         padding: 4rem 0 !important;
+    }
+
+    /* .phone-input [class*="col-md-"] {
+        padding: 0 0.75rem !important;
+    } */
+
+    .phone-input{
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+    }
+    .auth--bx .ui-wrapper-large{
+        padding: 3px 0 !important;
     }
   
 }
@@ -415,6 +400,9 @@
         min-height: 500px;
         width: 40%;
         border-radius: 10px 0 0 10px;
+      }
+      .dm--modal.service .dm--dbx{
+        min-height: 400px;
       }
       .dm--modal .dm--body{
         padding: 1.7rem 1.5rem;
@@ -594,55 +582,13 @@
 }
 
 @media screen and (max-width: 576px) {
-    .c--box {
-        width: 100% !important;
-        background-color: #fff;
-        padding: 1.5rem 1.5rem;
-        border-radius: 7px;
-      }
-      .c--box .form-control {
-        height: 42px;
-        font-family: 'gilroyregular';
-        background-color: #FBFCFF;
-    }
-    label {
-        display: block;
-        margin-bottom: 0.5rem;
-    }
-    .select-box .control {
-        display: flex;
-        position: relative;
-        align-items: center;
-        min-height: 40px;
-        -webkit-transition: all 0.15s ease;
-        -moz-transition: all 0.15s ease;
-        transition: all 0.15s ease;
-    }
-    .form-group {
-        margin-bottom: 0.5rem;
-    }
-    .big-btn.hero-start {
-        padding: .5rem 1rem;
-    }
-    form .custom-checkbox span {
-        position: relative;
-        top: 0px;
-    }
-    .c--drop .menu {
-        width: 100%;
-        left: 0px;
-        align-items: center;
-    }
-
     .full {
         height: 130vh;
     }
     .main-nav {
         padding: 0.55rem 0;
     }
-    .hero.home-hero {
-        height: 100vh  ;
-    }
+    
     .s---box {
         width: 100%;
         background-color: #fff;
@@ -674,7 +620,7 @@
 }
 @media screen and (max-width: 375px){
 .hero.home-hero {
-    height: 105vh !important;
+    height: 120vh !important;
 }
 .s---box {
     width: 100%;
@@ -707,7 +653,7 @@
 }
 @media screen and (max-width: 320px){
     .hero.home-hero {
-        height: 120vh !important;
+        height: 150vh !important;
     }
     }
 @media screen and (max-width: 320px){

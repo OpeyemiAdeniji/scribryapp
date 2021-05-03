@@ -39,41 +39,49 @@ const SignIn = (props) => {
     }
 
     const googleLogin = async (googleData) => {
-        setUser({...user, loading: true});
-        const data = {
-            token: googleData.tokenId
+        
+        if(googleData.tokenId !== undefined){
+
+            const data = {
+                token: googleData.tokenId
+            }
+    
+            await Axios.post(`${process.env.REACT_APP_API_URL}/auth/login/oauth`, {...data})
+            .then((resp) => {
+                
+                 // clear storage
+                 localStorage.clear();
+                 // set new storage items
+                 localStorage.setItem('token', resp.data.token);
+                 localStorage.setItem('userId', resp.data.data._id);
+                 localStorage.setItem('isLoggedIn', true);
+    
+                 const user = resp.data.data;
+    
+                            if(user.isAdmin === false){
+    
+                                if(user.projects.length === 0){
+                                    props.history.push('/projects/create')
+                                }else{
+                                    props.history.push('/dashboard/projects')
+                                }
+    
+                            }
+                        setLoading(false);
+    
+            }).catch((err) => {
+                
+                if (err.response) {
+                    if(err.response.data.message === 'Invalid credentials'){
+                        toastBar('Invalid username or password', 'error');
+                    }
+                } 
+                setUser({ ...user, loading: false });
+            })
+
         }
 
-        await Axios.post(`${process.env.REACT_APP_API_URL}/auth/login/oauth`, {...data})
-        .then((resp) => {
-            
-             // clear storage
-             localStorage.clear();
-             // set new storage items
-             localStorage.setItem('token', resp.data.token);
-             localStorage.setItem('userId', resp.data.data._id);
-             localStorage.setItem('isLoggedIn', true);
-
-             const user = resp.data.data;
-
-                        if(user.isAdmin === false){
-
-                            if(user.projects.length === 0){
-                                props.history.push('/services')
-                            }
-
-                        }
-setLoading(false);
-
-        }).catch((err) => {
-            
-            if (err.response) {
-                if(err.response.data.message === 'Invalid credentials'){
-                    toastBar('Invalid username or password', 'error');
-                }
-            } 
-            setUser({ ...user, loading: false });
-        })
+        
 
     }
     
@@ -109,7 +117,9 @@ setLoading(false);
                         if(user.isAdmin === false){
 
                             if(user.projects.length === 0){
-                                props.history.push('/services')
+                                props.history.push('/projects/create')
+                            }else{
+                                props.history.push('/dashboard/projects')
                             }
 
                         }
@@ -140,7 +150,7 @@ setLoading(false);
 
   return (
     <>
-    <section className="hero home-hero ui-full-bg-norm auth--bx" style={{backgroundImage: 'url("../../images/assets/bg@authbox.jpg")'}}>
+    <section className="ui-full-bg-norm auth--bx" style={{backgroundImage: 'url("../../images/assets/bg@authbox.jpg")'}}>
                 <div className="container">
                   
                     <div className="ui-wrapper-large">
@@ -157,7 +167,7 @@ setLoading(false);
                           
                                         <img src="../../images/assets/logo-white.svg" alt='img'/>
                                     </div>
-                               <div className="c--box ui-box-shadow-dark-fade mrgt1">
+                            <div className="c--box ui-box-shadow-dark-fade mrgt1">
           
 
                                     <form onSubmit={login}>
@@ -171,6 +181,7 @@ setLoading(false);
                                                 <div className="form-group">
                                                     <label className="font-gilroymedium brandcox-firefly fs-14 mb-1">Email address</label>
                                                     <input type="email"
+                                                    defaultValue={(e) => {setUser({...user, email: e.target.value})} }
                                                     onChange={(e) => setUser({...user, email: e.target.value }) } 
                                                     className="font-gilroy fs-15 form-control" placeholder="E.g. you@example.com" />
                                                 </div>
@@ -180,6 +191,7 @@ setLoading(false);
                                                     <div className="input--icon">
                                                         <span onClick={(e) => toggleField(e)} className="sc-eye fs-25"></span>
                                                         <input type={fieldType}
+                                                        defaultValue={(e) => {setUser({...user, password: e.target.value})} }
                                                         onChange={(e) => setUser({...user, password: e.target.value }) } 
                                                         className="font-gilroy fs-15 form-control" placeholder="Choose a password" />
                                                     </div>
@@ -216,8 +228,8 @@ setLoading(false);
                                                         clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
                                                         render={(props) => (
                                                             <>
-                                                                <Link onClick={props.onClick} disabled={props.disabled} to="" className="fs-14 ont-gilroy">Or sign in with <span>
-                                                                <img src="../../images/assets/google.svg" width="25px" alt='img'/></span></Link>
+                                                                <Link onClick={props.onClick} disabled={props.disabled} to="" className="fs-14 font-gilroy">Or sign in with <span>
+                                                                <img src="../images/assets/google.svg" width="20px" alt='img'/></span></Link>
                                                             </>
                                                           )}
                                                         buttonText="Google"

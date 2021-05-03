@@ -19,39 +19,33 @@ const Message = () => {
     
                             <div className="row">
     
-                                <div className="col-md-5">
+                                <div className="col-md-5 ipad-screen">
                                  
                                <div className="logo-auth">
-                               <div className="text-center">
-                                      <img src="../../images/assets/scribry.png" alt='img'/>
-                                </div>
+                                    <div className="text-center">
+                                        <img src="../../images/assets/scribry.png" alt='img'/>
+                                    </div>
                                 
-                               </div>
-                                    <div className="c--box ui-box-shadow-dark-fade mrgt3">
-              
-    
-                                       
-                                        
-                                   
+                                </div>
+
+                                <div className="c--box ui-box-shadow-dark-fade mrgt3">
 
                                     <LottiePlayer lottieData={checkData} w={200} h={200} />
 
-<h3 className="font-gilroymedium fs-24 text-center brand-purple mrgb mrgt1">Welcome to Scribry!</h3>
-<p className="font-gilroy fs-15 mrgb pdl3 pdr3">
- Your account has been successfully created. Please check your email to activate your account. 
-</p>
+                                    <h3 className="font-gilroymedium fs-24 text-center brand-purple mrgb mrgt1">Welcome to Scribry!</h3>
+                                    <p className="font-gilroy fs-15 mrgb pdl3 pdr3">
+                                    Your account has been successfully created. Please check your email to activate your account. 
+                                    </p>
 
-<div className="mrgt mrgb">
+                                    <div className="mrgt mrgb">
                                                   
-            <Link to="/signin" className="btn big-btn hero-start btn-block bg-brand-yellow onmineshaft font-gilroybold">Continue</Link>
+                                       <Link to="/signin" className="btn big-btn hero-start btn-block bg-brand-yellow onwhite font-gilroybold">Continue</Link>
                                             
- </div>
+                                    </div>
 
-</div>
-                                    
-    
-                                   
                                 </div>
+                                            
+                             </div>
                                 
                             </div>
     

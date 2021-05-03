@@ -29,7 +29,7 @@ const ServicesModal = ({isShow, closeModal, title, content}) => {
                 keyboard={false}
                 aria-labelledby="small-modal"
                 centered
-                className="dm--modal"
+                className="dm--modal service"
             >
 
                 <Modal.Body>
@@ -57,7 +57,7 @@ const ServicesModal = ({isShow, closeModal, title, content}) => {
 
                                {content ? content : ''}
 
-                                <div className="mrgt3">
+                                <div className="mrgt9">
                                     <Link onClick={(e) => close(e)} to="" className="btn big-btn hero-start btn-block bg-brand-yellow onmineshaft font-gilroybold">Close</Link>
                                 </div>
                                

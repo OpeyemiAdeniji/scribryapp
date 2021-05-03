@@ -175,7 +175,7 @@ h6 {
 }
 
 .main-nav .nav .nav-item a {
-  color: #b0aefb;
+  color: #060089 !important;
   display: block;
   padding-top: 18px;
   padding-bottom: 18px;
@@ -186,8 +186,12 @@ h6 {
   font-size: 14px;
 }
 
+.main-nav .nav .nav-item.last a {
+  color: #fff !important;
+}
+
 .main-nav .nav .nav-item a:hover {
-  color: #fff;
+  color: #000;
   background: none;
 }
 

@@ -1,47 +1,37 @@
-import React, { useEffect, useContext, useState } from 'react';
-import { Link, Redirect, useHistory } from 'react-router-dom';
+import React, { useState, useEffect, useContext } from 'react';
+import { Link, useHistory } from 'react-router-dom';
+import Axios from 'axios';
 
-// components
 import SideMenu from './SideMenu';
-// contexts
-import AuthContext from '../../../context/auth/authContext';
-
+import UserContext from '../../../context/user/userContext'
 
 const SideBar = (props) => {
-    const [loading, setLoading] = useState(false);
-    
-    const authContext = useContext(AuthContext);
-    const { userType } = authContext;
-    const history = useHistory();
+
+    const userContext = useContext(UserContext);
 
     useEffect(() => {
 
-        setLoading(true);
+        redirectToLogin();
 
-        if(localStorage.getItem('isLoggedIn') === 'true'){
-            authContext.getUser();
-            setLoading(false)
+        if(localStorage.getItem('token')){
+            userContext.getUser();
         }
+        console.log(props.title, 'the');
 
-      }, []);
+    }, [])
 
-      const logout = () => {
-        localStorage.clear();
-        history.push('/signin')
-      };
+    const redirectToLogin = () => {
 
+        if(localStorage.getItem('token') === null){
+            localStorage.clear();
+            props.history.push('/signin');
+        }
+    }
 
-   
-
-  
-    
-   
     return(
-        
         <>
-            <SideMenu   loading={loading} handleLogout={logout} userType={userType}/>
+        <SideMenu {...props} />
         </>
-        
     )
 
 }

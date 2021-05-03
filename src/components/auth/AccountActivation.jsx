@@ -67,16 +67,16 @@ const ActivateAccount = (props) => {
     }
 
     return (
-        <Fragment>
-             <section className="hero home-hero ui-full-bg-norm auth--bx" style={{backgroundImage: 'url("../../../images/assets/bg@changepw.png")'}}>
+        <>
+             <section className="hero home-hero ui-full-bg-norm auth--bx" style={{backgroundImage: 'url("../../../images/assets/bg@auth5.jpg")'}}>
                 
                 <div className="container">
                     <div className="ui-wrapper-large">
                         <div className="row">
                             <div className="col-md-7">
                                 <div className="row">
-                                    <div className="col-md-7 mx-auto">
-                                        <div className="logo-auth auth--mv ui-text-center">
+                                    <div className="col-md-7 mx-auto auth--mv">
+                                        <div className="logo-auth ui-text-center">
                             
                                             <img src="../../images/assets/logo-white.svg" alt='img'/>
 
@@ -110,9 +110,9 @@ const ActivateAccount = (props) => {
                                                             </div>
 
                                                             <div className="mrgb1">
-                                                                <h3 className="title l-hit fs-18 ui-text-center">Account Activated successfully</h3>
+                                                                <h3 className="title fs-24 ui-text-center font-gilroymedium" style={{lineHeight: '35px'}}>Account Activated successfully</h3>
 
-                                                                <p className=" fs-14 ui-text-center account">Login to your account</p>
+                                                                <p className="font-gilroy fs-14 ui-text-center account mrgt2">Login to your account</p>
                                                             </div>
 
                                                             <div className="ui-text-center mrgt4login ">
@@ -133,7 +133,7 @@ const ActivateAccount = (props) => {
                 </div>
 
             </section>
-        </Fragment>
+        </>
   );    
 };
 

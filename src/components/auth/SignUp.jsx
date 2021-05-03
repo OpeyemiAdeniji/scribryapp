@@ -101,26 +101,34 @@ const SignUp= (props) => {
     }
 
     const googleSignup = async (googleData) => {
-        
-      const data = {
+
+      console.log(googleData);
+
+      if(googleData.tokenId !== undefined){
+
+        const data = {
           token: googleData.tokenId
+        }
+
+        await Axios.post(`${process.env.REACT_APP_API_URL}/auth/register/oauth`, {...data})
+        .then((resp) => {
+          if(resp.data.error === false){
+            toastBar('Account created successfully', 'success');
+            props.history.push('/signin')
+          }
+          setLoading(false);
+        }).catch((err) => {
+          if (err.response) {
+            toastBar(`Error! ${err.response.data.message}`, "error");
+          }
+          console.log(err, 'the catch');
+
+          setLoading(false);
+        })
+
       }
-
-      await Axios.post(`${process.env.REACT_APP_API_URL}/auth/register/oauth`, {...data})
-      .then((resp) => {
-        if(resp.data.error === false){
-          toastBar('Account created successfully', 'success');
-          props.history.push('/signin')
-        }
-        setLoading(false);
-      }).catch((err) => {
-        if (err.response) {
-          toastBar(`Error! ${err.response.data.message}`, "error");
-        }
-        console.log(err, 'the catch');
-
-        setLoading(false);
-      })
+        
+      
 
   }
 
@@ -173,7 +181,7 @@ const SignUp= (props) => {
 
   return (
     <>
-    <section className="hero home-hero ui-full-bg-norm" style={{backgroundImage: 'url("../../images/assets/bg@register.png")'}}>
+    <section className="ui-full-bg-norm auth--bx" style={{backgroundImage: 'url("../../images/assets/bg@auth3.jpg")'}}>
                 <div className="container">
                   
                     <div className="ui-wrapper-large">
@@ -185,13 +193,13 @@ const SignUp= (props) => {
                              
                               <div className="row">
 
-                                <div className="col-md-7 mx-auto auth--mv">
+                                  <div className="col-md-7 mx-auto auth--mv">
 
                                   <div className="logo-auth ui-text-center mrgb2">
                                     <img src="../../images/assets/logo-white.svg" alt='img'/>
                                   </div>
                               
-                                  <div className="c--box ui-box-shadow-dark-fade mrgt-8">
+                              <div className="c--box ui-box-shadow-dark-fade mrgt-8">
           
 
                                     <form onSubmit={signup}>
@@ -205,6 +213,7 @@ const SignUp= (props) => {
                                                 <div className="form-group">
                                                     <label className="font-gilroymedium brandcox-firefly fs-14 mb-1">Email address</label>
                                                     <input type="email" name='email'
+                                                    defaultValue={(e) => {setRegData({...regData, email: e.target.value})} }
                                                      onChange={(e) =>
                                                         setRegData({
                                                           ...regData,
@@ -218,6 +227,7 @@ const SignUp= (props) => {
                                                <div className="form-group">
                                                     <label className="font-gilroymedium brandcox-firefly fs-14 mb-1">Phone Number</label>
                                                     <input type="number" name='phone'
+                                                    defaultValue={(e) => {setRegData({...regData, phoneNumber: e.target.value})} }
                                                      onChange={(e) =>
                                                         setRegData({
                                                           ...regData,
@@ -244,18 +254,17 @@ const SignUp= (props) => {
 
                                                 <div className="input--icon"> 
                                                     
-                                                  <span onClick={(e) => toggleField(e)} className="sc-eye fs-25"></span>
-                                                  <input 
+                                                <span onClick={(e) => toggleField(e)} className="sc-eye fs-25"></span>
+                                                <input 
+                                                  defaultValue={(e) => {setRegData({...regData, password: e.target.value})} }
+                                                  onChange={(e) => {setRegData({...regData, password: e.target.value})}}
+                                                  type={fieldType} className=" font-gilroy fs-15 form-control" placeholder="Password" />
                                                     
-                                                    onChange={(e) => {setRegData({...regData, password: e.target.value})}}
-                                                    type={fieldType} className=" font-gilroy fs-15 form-control" placeholder="Password" />
                                                     
                                                 </div>
-                                                
-                                                
-                                                <div className="d-flex align-items-center pass-str">
-                                                  {/* <PasswordStrengthBar minLength={8} password={regData.password} /> */}
-                                                </div>
+                                                {/* <div className="d-flex align-items-center pass-str">
+                                                  <PasswordStrengthBar minLength={8} password={regData.password} />
+                                                </div> */}
                                                 
                                             </div>
                                                 <div className="form-group ">
@@ -290,16 +299,16 @@ const SignUp= (props) => {
                                                         clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
                                                         render={(props) => (
                                                           <>
-                                                              <Link onClick={props.onClick} disabled={props.disabled} to="" className="fs-14 ont-gilroy">Or sign in with <span>
-                                                              <img src="../../images/assets/google.svg" width="25px" alt='img'/></span></Link>
+                                                              <Link onClick={props.onClick} disabled={props.disabled} to="" className="fs-14 font-gilroy">Or register with <span>
+                                                              <img src="../images/assets/google.svg" width="20px" alt='img'/></span></Link>
                                                           </>
                                                         )}
-                                                        buttonText="Google"
-                                                        onSuccess={googleSignup}
-                                                        onFailure={googleSignup}
-                                                        cookiePolicy={'single_host_origin'}
-                                                        isSignedIn={false}
-                                                    />
+                                                          buttonText="Google"
+                                                          onSuccess={googleSignup}
+                                                          onFailure={googleSignup}
+                                                          cookiePolicy={'single_host_origin'}
+                                                          isSignedIn={false}
+                                                  />
                                                 </div>
                                                 </form>
                                                 <div className="form-group ui-text-center ">

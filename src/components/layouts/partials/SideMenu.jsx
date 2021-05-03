@@ -1,21 +1,17 @@
-import React, { useEffect, useContext, useState } from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import React, { useState, useEffect, useContext } from 'react';
+import { Link, useHistory } from 'react-router-dom';
+import Axios from 'axios';
 
 const SideMenu = (props) => {
 
-    useEffect(() => {
-
-    }, [])
-
     const logout = () => {
-      props.handleLogout();
+      localStorage.clear();
+      props.history.push('/signin')
     }
 
     return(
-
-        <div>
-
-          <div className='ui-monitor'>
+        <>
+            <div className='ui-monitor'>
             <div className='d-flex'>
               <div />
               <div className='ml-auto'>
@@ -33,11 +29,9 @@ const SideMenu = (props) => {
 
             <div className='ui-sidebar-primary ssbar--open'>
               
-              <div className='ui-sidebar-primary-header ui-text-center'>
-                <Link className='ui-sidebar-primary-logo'>
-                  <img src="../../images/assets/avatar.svg" alt='user-photo' className='ui-rounded'/>
-                  <p class='onwhite font-gilroy fs-18 mrgb0'> Anonymous </p>
-                  <span className='fs-14' style={{ color: '#6B68F2' }}> Admin </span>
+              <div className='ui-sidebar-primary-header pdl3'>
+                <Link to="/dashboard" className='ui-sidebar-primary-logo'>
+                  <img src="../../../images/assets/logo-white.svg" alt='logo'/>
                 </Link>
               </div>
 
@@ -46,41 +40,44 @@ const SideMenu = (props) => {
               <ul className='ui-sidebar-primary-links'>
               <li className='active'>
                 <Link to='/dashboard' className='ui-icon-animate' title='Dashboard'>
-                  <span className='fe fe-home fs-18' />
+                  <span className='fe fe-home fs-20' />
                   <span className='lnk--text sb-text font-gilroy fs-15'>
                     Home
                   </span>
                 </Link>
               </li>
 
-       
-       
-          
+              <li>
+                <Link to='/dashboard/projects' className='ui-icon-animate' title='Dashboard'>
+                  <span className='fe fe-book-open fs-20' />
+                  <span className='lnk--text font-gilroy fs-15'>
+                    Projects
+                  </span>
+                </Link>
+              </li>
 
               <li>
                 <Link
-                onClick={logout}
                   className='ui-icon-animate'
                   title='logout'
+                  onClick={logout}
                 >
-                  <span className='fe fe-arrow-left fs-18' />
+                  <span className='fe fe-chevrons-right fs-20' />
                   <span className='lnk--text font-gilroy fs-15'>
                     Log Out
                   </span>
                 </Link>
               </li>
             </ul>
-             
-                  
+           
+                
               </div>
             
             </div>
           
           </section>
 
-        </div>
-      
-
+        </>
     )
 
 }

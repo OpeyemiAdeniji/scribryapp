@@ -1,35 +1,19 @@
 import React, { useEffect, useState, useContext } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import NavBar from '../layouts/partials/NavBar';
 import Footer from '../layouts/partials/Footer';
 import ContactModal from '../layouts/partials/ContactModal'
 import Faq from './Faq'
 import ServicesModal from '../layouts/partials/ServicesModal'
-import ServiceContext from './../../context/service/serviceContext'
 
-const Services = (props) => {
+const Contact = () => {
 
-    const serviceContext = useContext(ServiceContext)
 
     const [showS, setShowS] = useState(false);
-    const history = useHistory();
-    const [step, setStep] = useState(0)
-
-    const [projectData, setProject] = useState({
-        name: '',
-        serviceId: '',
-        description: ''
-    })
 
     useEffect(() => {
-
-        if(!localStorage.getItem('token')){
-            props.history.push('/signin')
-        }
-
         scrollTop()
-        serviceContext.getServices();
 
     }, []);
 
@@ -42,53 +26,6 @@ const Services = (props) => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       };
 
-      const splitName = (n) => {
-
-        let p1, p2;
-
-        const na = n.split(' ');
-
-        if(n === 'Web Copy Development'){
-
-            p1 = na[0] + ' ' + na[1];
-            p2 = na[2];
-
-        }else{
-            p1 = na[0];
-            p2 = na[1];
-        }
-
-        return { partOne: p1, partTwo: p2 }
-
-      }
-      
-      const getType = (e, s) => {
-          e.preventDefault();
-          setProject({...projectData, serviceId: s.name});
-          setStep(1);
-      }
-
-      const getIcons = (n) => {
-          switch(n){
-              case 'Web Copy Development':
-                  return '../../../images/assets/icon@webcopy.svg'
-             case 'Coorperate Writing':
-                return '../../../images/assets/icon@corp.svg'
-            case 'Proofreading':
-                return '../../../images/assets/icon@proof.svg'
-            case 'Editing':
-                return '../../../images/assets/icon@editing.svg'
-            case 'Website Editing':
-                return '../../../images/assets/icon@webedit.svg'
-            case 'Editing':
-                return '../../../images/assets/icon@editing.svg'
-            case 'Creative Writing':
-                return '../../../images/assets/icon@write.svg'
-            default:
-                return ''
-          }
-      }
-
     
 
     return(
@@ -99,93 +36,208 @@ const Services = (props) => {
            
 
             
-            <section id="services" className="section left experience ui-full-bg-norm" style={{backgroundImage: 'url("../../images/assets/bg@back-five.jpg")'}}>
+            <section id="services" className="section left experience ui-full-bg-norm full" style={{backgroundImage: 'url("../../images/assets/bg@back-five.jpg")'}}>
                 <div className="container">
-                    <div className="ui-wrapper-large">
+                    <div className="ui-wrapper-xxlarge">
 
                         <div className="row">
-                        
                         <div className="col-md-4 mx-auto">
                         <h1 className="font-montserratbold text-center">
-                                    <span className="brand-purple fs-20">What would you like to do? </span>  
+                                    <span className="brand-blue fs-24">What would you like to do? </span>  
                                 </h1>
                                 <p className="font-montserratmedium text-center">
-                                    <span className="  brand-purpledark fs-16">We offer range of services within the creative content development industry. </span>  
+                                    <span className="  brand-purpledark fs-13">We offer range of services within the creative content development industry. </span>  
                                 </p>
                         </div>
-                           
+                            <div className="col-md-12 mx-auto">
+                            
+                                   
+                                <div className="row row-x mrgt2">
+                                
+
+                                    <div className="col-md-8 mx-auto">
+                                        <div className="row">
+
+                                        <div className="col-md-3 col-sm-6">
+                                            <Link  className="s--link ">
+                                                <div className="s--box ">
+                                                
+                                                    <img src="../../../images/assets/icon@editing.svg" alt="icon" />
+                                                    <p className="name">
+                                                    <span className="font-montserratmedium fs-17">Document</span>
+                                                        <span className="font-montserratmedium fs-17">Editing</span>
+                                                    </p>
+                                                    <p className="dur mrgb0">
+                                                        <span className="font-montserratmedium fs-12">Delivery in 4 days</span>
+                                                    </p>
+                                                </div>
+                                                
+                                            </Link>
+                                        </div>
+                                            
+                                        <div className="col-md-3 col-sm-6">
+                                            <Link  className="s--link">
+                                                <div className="s--box">
+                                                    <img src="../../../images/assets/icon@proof.svg" alt="icon" />
+                                                    <p className="name">
+                                                        <span className="font-montserratmedium fs-17">Proofreading</span><br/>
+                                                        <span className="font-montserratmedium fs-17">{""}</span>
+                                                    </p>
+
+                                                    <p className="dur mrgb0">
+                                                        <span className="font-montserratmedium fs-12">Delivery in 2 days</span>
+                                                    </p>
+                                                </div>
+                                            </Link>
+                                        </div>
+                                        
+                                        <div className="col-md-3 col-sm-6">
+                                            <Link  className="s--link ">
+                                                <div className="s--box">
+                                                <img src="../../../images/assets/icon@write.svg" alt="icon" />
+                                                <p className="name">
+                                                    <span className="font-montserratmedium fs-17">Creative</span>
+                                                    <span className="font-montserratmedium fs-17">Writing</span>
+                                                </p>
+                                                <p className="dur mrgb0">
+                                                    <span className="font-montserratmedium fs-12">Delivery in 8 days</span>
+                                                </p>
+                                            </div>
+                                           
+                                            </Link>
+                                        </div>
+
+                                        <div className="col-md-3 col-sm-6">
+                                            <Link to='/createproject' className="s--link dropdown">
+                                            <button className='service-btn'>
+                                                <div className="s--box">
+                                                    <img src="../../../images/assets/icon@proof.svg" alt="icon" />
+                                                    <p className="name">
+                                                    <span className="font-montserratmedium fs-17">Cooperate</span>
+                                                    <span className="font-montserratmedium fs-17">Writing</span>
+                                                    </p>
+                                                    <p className="dur mrgb0">
+                                                        <span className="font-montserratmedium fs-12">Delivery in 2 days</span>
+                                                    </p>
+                                                </div>
+                                                <div class="">
+                                                <div class="dropdown-content">
+    <span><Link to >Business Doc Development</Link></span>
+    <span><Link to >Company Profile</Link></span>
+    <span><Link to >Business Plan</Link></span>
+    <span><Link to >Business Proposal</Link></span>
+  </div>
+</div>
+                                            </button>
+                                            </Link>
+                                        </div>
+                                        
+                                         </div>
+                                    </div>
+                                    
+                                </div>
+                                
+                            </div>
+                             
                              
                         </div>
 
-                        {
-                            step === 0 &&
-                            <>
-                                <div className="row mrgt3 mrgb1">
 
-                                    <div className="col-md-8 mx-auto">
-
-                                        <div className="row">
-
-                                            {
-
-                                                serviceContext.loading &&
-                                                <></>
-
-                                            }
-
-                                            {
-
-                                                !serviceContext.loading && serviceContext.services.length > 0 &&
-                                                <>
-                                                    {
-                                                        serviceContext.services.map((s, i) => 
-                                                        
-                                                            <>
-                                                                <div className="col-md-3 col-sm-6">
-                                                                    <Link onClick={(e) => getType(e, s)} className="s--link dropdown">
-                                                                        <div className="s--box ">
-                                                                        
-                                                                            <img src={getIcons(s.name)} alt="icon" />
-                                                                            <p className="name">
-                                                                                <span className="font-montserratmedium fs-17">{ splitName(s.name).partOne  }</span>
-                                                                                <span className="font-montserratmedium fs-17">{ splitName(s.name).partTwo  }</span>
-                                                                            </p>
-                                                                            <p className="dur mrgb0">
-                                                                                <span className="font-montserratmedium fs-12">Delivery in 4 days</span>
-                                                                            </p>
-
-                                                                            <p className="drpdwn"></p>
-                                                                        </div>
-                                                                        
-                                                                    </Link>
-                                                                </div>
-                                                            </>
-                                                        )
-                                                    }
-                                                </>
-
-                                            }
-
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-                            </>
-                        }
-
-                        {
-                            step === 1 &&
-                            <>
-                                <h1>{ projectData.serviceId }</h1>
-                            </>
-                        }
                         
+
                     </div>
                 </div>
 
-                
+                <div className="container">
+                    <div className="services-two">
+
+                        <div className="row">
+                            <div className="col-md-12 text-center mx-auto">
+
+                                <div className="row row-x mrg">
+
+                                   
+
+                                    <div className="col-md-6 mx-auto">
+                                        <div className="row">
+
+                                        <div className="col-md-4 col-sm-6">
+                                            <Link to='' className="s--link">
+                                                <div className="s--box">
+                                                    <img src="../../../images/assets/icon@editing.svg" alt="icon" />
+                                                    <p className="name">
+                                                    <span className="font-montserratmedium fs-17">Web Copy</span>
+                                                    <span className="font-montserratmedium fs-17">Development</span>
+                                                      
+                                                    </p>
+
+                                                    <p className="dur mrgb0">
+                                                        <span className="font-montserratmedium fs-12">Delivery in 4 days</span>
+                                                    </p>
+                                                </div>
+                                            </Link>
+                                        </div>
+                                            
+                                    
+                                        <div className="col-md-4 col-sm-6">
+                                            <Link  className="s--link">
+                                                <div className="s--box">
+                                                <img src="../../../images/assets/icon@write.svg" alt="icon" />
+                                                <p className="name">
+                                                    <span className="font-montserratmedium fs-17">Website</span>
+                                                    <span className="font-montserratmedium fs-17">Editing</span>
+                                                    <span className="font-montserratmedium fs-17">{""}</span>
+                                                </p>
+
+                                                <p className="dur mrgb0">
+                                                    <span className="font-montserratmedium fs-12">Delivery in 8 days</span>
+                                                </p>
+                                            </div>
+                                            </Link>
+                                        </div>
+                                        <div className="col-md-4 col-sm-6">
+                                            <Link  className="s--link  service-btn">
+                                                <div className="s--box">
+                                                    <img src="../../../images/assets/icon@proof.svg" alt="icon" />
+                                                    <p className="name">
+                                                    <span className="font-montserratmedium fs-17">Creative</span>
+                                                    <span className="font-montserratmedium fs-17">Transcription</span>
+                                                    </p>
+
+                                                    <p className="dur mrgb0">
+                                                        <span className="font-montserratmedium fs-12">Delivery in 2 days</span>
+                                                    </p>
+                                                </div>
+                                                <div class="">
+                                                <div class="dropdown-content">
+    <span><Link to >Document</Link></span>
+    <span><Link to >Document</Link></span>
+    <span><Link to >Document</Link></span>
+  </div>
+</div>
+                                            </Link>
+                                        </div>
+                                        
+                               
+                                       
+
+                                        
+
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                
+                            </div>
+                             
+                             
+                        </div>
+
+
+                        
+
+                    </div>
+                </div>
             </section>
         
 
@@ -195,4 +247,4 @@ const Services = (props) => {
 
 }
 
-export default Services;
+export default Contact;

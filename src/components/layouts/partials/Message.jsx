@@ -33,7 +33,7 @@ const Message = ({ buttonText ,message, handleSubmit, title}) => {
                 </div>
 
                 <div className="form-group mrgb0 ui-text-center">
-                    <Link onClick={(e) => submit(e)} to="" className="btn big-btn hero-start btn-block bg-brand-yellow onmineshaft font-gilroybold">{buttonText ? buttonText : 'Continue'}</Link>
+                    <Link onClick={(e) => submit(e)} to="" className="btn big-btn bg-brand-yellow onwhite font-gilroybold">{buttonText ? buttonText : 'Continue'}</Link>
                 </div>
                 
             </div>

@@ -1,0 +1,248 @@
+import React, { useEffect, useContext, useState, Fragment } from "react";
+import { Link } from "react-router-dom";
+import { Tabs, Tab, TabPanel, TabList } from "react-web-tabs";
+import Axios from "axios";
+
+import "react-web-tabs/dist/react-web-tabs.css";
+import PasswordStrengthBar from 'react-password-strength-bar';
+
+// components
+import ButtonSpinner from '../layouts/partials/ButtonSpinner';
+import toastBar from '../../helpers/toastBar';
+
+
+const ChangePassword = (props) => {
+
+
+    const [user, setUser] = useState({
+        loading: false,
+        currentPassword: '',
+        newPassword: '',
+    });
+
+    const {currentPassword, newPassword, loading } = user;
+
+    const config = {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+    };
+
+    const UpdatePassword = async (e) => {
+        e.preventDefault();
+
+        try {
+
+            if (!user.currentPassword || !user.newPassword) {
+                toastBar('Supply your email', 'warning')
+            } else {
+                setUser({...user, loading: true});
+
+                await Axios.post(`${process.env.REACT_APP_API_URL}/auth/updatepassword`, {...user}, config)
+                .then((resp) => {
+
+                    if (resp) {
+                        toastBar(resp.data.message, 'success');
+                        props.history.push('/passwordchanged');
+                    }
+
+                }).catch((err) => {
+
+                    if (err.response) {
+                        toastBar(`${err.response.data.message}`, 'error');
+                    } 
+                    setUser({ ...user, loading: false });
+
+                })
+            }
+            
+        } catch (err) {
+            toastBar(`${err}`, 'error');
+        }
+    }
+
+
+  return (
+    <Fragment>
+    <section className="hero home-hero ui-full-bg-norm" style={{backgroundImage: 'url("../../images/assets/bg@changepw.png")'}}>
+                <div className="container">
+                  
+                    <div className="ui-wrapper-large">
+
+                        <div className="row">
+
+                            <div className="col-md-5">
+                             
+                           <div className="logo-auth">
+                           <div className="text-center">
+                                  <img src="../../images/assets/scribry.png" alt='img'/>
+                            </div>
+                            
+                           </div>
+                                <div className="c--box ui-box-shadow-dark-fade mrgt3">
+          
+
+                                    <form onSubmit={UpdatePassword}>
+                                       
+                                            <>
+                                                <div className="form-group">
+                                                <h3 className='font-gilroybold brand-purpledark fs-22 mb-1 text-center mrgt2 mrgb1'>Change your Passsword?
+                                                 </h3>
+                                                <p className='font-gilroybold brand-purpledark fs-14 mb-1 text-center mrgt1 mrgb2'>
+                                                Please choose a password that you can easily remember. Think about it.
+                                                </p>
+                                                   
+                                                </div>
+
+                                                <div className="form-group">
+                                                    <label className="font-gilroymedium brandcox-firefly fs-14 mb-1">Current Password</label>
+                                                    <input type="password" name="currentpassword"
+                                                    onChange={(e) => setUser({...user, currentPassword: e.target.value})}
+                                                    className="font-gilroybold fs-15 form-control" placeholder="Choose a password" />
+                                                    
+
+                                                </div>
+
+                                                <div className="form-group">
+                                                    <label className="font-gilroymedium brandcox-firefly fs-14 mb-1">Type password again</label>
+                                                    <input type="password"
+                                                  onChange={(e) => setUser({...user, newPassword: e.target.value})}
+                                                    className="font-gilroybold fs-15 form-control" placeholder="Confirm password" />
+                                                    <PasswordStrengthBar minLength={8} password={newPassword} />
+                                                </div>
+
+                                               
+
+
+                                                <div className="mrgt">
+                                                   
+                                                {
+                                                            loading ?
+                                                           
+                                                            (<button className="btn big-btn hero-start btn-block bg-brand-yellow onmineshaft font-gilroybold" disabled><ButtonSpinner /></button>) :
+                                                            (<button className="btn big-btn hero-start btn-block bg-brand-yellow onmineshaft font-gilroybold">Submit</button>) 
+                                                        }
+                                                         
+                                                     
+                                                </div>
+                                             
+                                               
+                                            </>
+                                       
+
+                                      
+
+                                    </form>
+                                    
+
+                                </div>
+
+                               
+                            </div>
+                            
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+    </Fragment>
+  );
+};
+
+export default ChangePassword;
+
+
+
+
+  return(
+        <>
+           
+            <section className="auth">
+                <div className="container">
+
+                    <div className="row">
+
+                        <div className="col-md-4 mx-auto">
+
+                            
+                           {
+                               !reset &&
+                               <form onSubmit={(e) => submit(e)}>
+                            <div className="auth--bx">
+
+                                <div className="mrgb2">
+                                    <h3 className="title fs-30 ui-text-center">Reset Password</h3>
+                                    <p className="onsilver fs-14 ui-text-center mrgb1">Choose a new password</p>
+                                </div>
+
+                                <Alert show={aData.show} type={aData.type} message={aData.message} />
+                                
+                                <div className="form-group">
+                                    <label>New password</label>
+                                    <div className="input-group">
+                                            <input
+                                            defaultValue={(e) => {setResetData({...resetData, password: e.target.value})} } 
+                                            onChange={(e) => {setResetData({...resetData, password: e.target.value})}}
+                                            type={pass} className="form-control" placeholder="Choose a new password" />
+                                        <div className="input-group-append">
+                                            <span className="input-group-text">
+                                                <Link onClick={(e) => showPass(e)} to="" className={`fe ${pass === 'password' ? 'fe-eye' : 'fe-eye-off'}`}></Link>
+                                            </span>
+                                        </div>
+                                    </div> 
+
+                                </div>
+                                
+                                <div className="form-group">
+                                    <label>Type password again</label>
+                                    <input 
+                                      defaultValue={(e) => {setResetData({...resetData, confirmPassword: e.target.value})} } 
+                                      onChange={(e) => {setResetData({...resetData, confirmPassword: e.target.value})}}
+                                    type="password" className="form-control" placeholder="Type again" />
+                                </div>
+
+                                <div className="form-group">
+
+                                {
+                                           loading &&
+                                           <button className="btn btn-lg btn-block onwhite"><ButtonSpinner imageUrl={`../../../images/assets/spinner-white.svg`} /></button>
+                                       }
+                                       {
+                                           !loading &&
+                                           <button className="btn btn-lg btn-block onwhite">CHANGE PASSWORD</button>
+                                       }
+                                </div>              
+                            </div>
+                                
+                            </form>
+
+                           }
+
+                           {
+                             reset &&
+                                <>
+                                    <div className="ui-text-center mrgb2">
+                                        <LottiePlayer lottieData={lottieData} w='150px' h='150px' loop={true} />
+                                    </div>
+                                    <div className="mrgb1">
+                                        <h3 className="title fs-25 ui-text-center">Password reset successfully</h3>
+                                        <p className="onmineshaft fs-14 ui-text-center mrgb1">Login to your account</p>
+                                    </div>
+
+                                    <div className="ui-text-center">
+                                        <Link to="/login" className="btn btn-lg md-button onwhite">LOGIN</Link>
+                                    </div>
+                                </>
+                           }
+                            
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+        </>
+    )
+
+}
+
